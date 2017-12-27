@@ -8,9 +8,11 @@ chú ý `/root` là thư mục `home` của `root user` chứ không phải là 
 ### thư mục /bin
 `/bin` : chứa các chương trình thực thi. các chương trình chung được sử dụng bởi tất cả mọi người như lệnh như ls, grep, netstat, ...
 <img src="https://i.imgur.com/lZr1nRO.png">
+
 ### thư mục /sbin
 `/sbin` : chứa các chương trình thực thi như lệnh như Iptable, reboot, ifconfig... ==> các lệnh cho sysadmin
 <img src="https://i.imgur.com/3QdA9yq.png">
+
 ### thư mục /etc
 `/etc` : chứa các file config, chứa các shell script dùng để khởi động hoặc tắt các chương trình khác
 <img src="https://i.imgur.com/Qo14KVQ.png">
