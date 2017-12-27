@@ -1,10 +1,10 @@
-#The file streams
+# The file streams
 khi những câu lệnh được thực thi,mặc định có 3 chuẩn file stream
 Standard input (stdin): nhập dữ liệu đầu vào
 Standard output (stdout): hiện thị dữ liệu được tạo ra bởi các chương trình
 Standard erro (stderr): báo lỗi trong quá trình thực thi
 
-#chuyển hướng các luồng file
+# chuyển hướng các luồng file
 > filename: mở một tập tin, ghi đè nếu đã có dữ liệu
 <img src="https://i.imgur.com/6Nybg7e.png">
 
@@ -12,12 +12,12 @@ Standard erro (stderr): báo lỗi trong quá trình thực thi
 
 <img src="https://i.imgur.com/XzQby2Z.png">
 
-#pipe
+# pipe
  Sử dụng để lấy kết quả của câu lệnh trước làm input cho câu lệnh sau, ngăn cách bởi dấu `|`
  ví dụ:
 <img src="https://i.imgur.com/IKxAk68.png">
 
-#Tìm kiếm file
+# Tìm kiếm file
 `locate` là một tiện ích giúp tìm kiếm một dữ liệu có trước trong file và thư mục trong filesystem
 của bạn, phù hợp cả với các thư mục chứ kí tự đặc biệt.
 `local` sử dụng cơ sở dữ liệu được tạo bởi chương trình `updatedb`. Hầu hết các kệ thống Linux
@@ -38,48 +38,48 @@ chỉ định
 lệnh `find` là lệnh hữu ích và thường xuyên được sử dụng hàng ngày của sysadmin. 
 nó tìm kiếm tới bất kì thư mục nào và định vị tập tin phù hợp với điều kiện đã chỉ định.
 mặc định nó luôn luôn làm việc ở thư mục hiện tại
-- tìm kiếm văn bản
+## tìm kiếm văn bản
 `find xxx.txt`
-- tìm kiếm file ẩn
+## tìm kiếm file ẩn
 `find / -type f -name ".*"`
 
--chỉ tìm kiếm thư mục có tên "gcc"
+## chỉ tìm kiếm thư mục có tên "gcc"
 `find /usr -type d -name gcc`
 
--chỉ tìm kiếm file có "test1"
+## chỉ tìm kiếm file có "test1"
 `find /usr -type f -name test1`
 
 Một cách sử dụng khác của `find` là chạy lệnh trên file phù hợp với tiêu chuẩn tìm kiếm của bạn
 ví dụ:
-- tìm và xóa tất cả file với đuôi kết thúc là .swp
+## tìm và xóa tất cả file với đuôi kết thúc là .swp
 `find -name "*.swp" -exec rm {} ';'`
 `find -name  "*.swp" -ok rm {} \;`
 
--tìm kiếm file có group
+## tìm kiếm file có group
 `find /home -group xx`
 
--tìm kiếm file có quyền 777
+## tìm kiếm file có quyền 777
 `find .-type f -perm 777`
 
--tìm kiếm file file CHỈ có quyền read
+## tìm kiếm file file CHỈ có quyền read
 `find / -perm /u=r`
 
--tìm kiếm file rỗng
+## tìm kiếm file rỗng
 `find /tmp - type f -empty`
 
--tìm kiếm file có dung lượng 50MB
+## tìm kiếm file có dung lượng 50MB
 `find / -size +50M`
 
--tìm kiếm file được chỉnh sửa trong vòng 50 - 100 ngày
+## tìm kiếm file được chỉnh sửa trong vòng 50 - 100 ngày
 `find / -mtime +50 -mtime -100`
 
--tìm kiếm file vừa được tạo ra trong vòng 1 giờ
+## tìm kiếm file vừa được tạo ra trong vòng 1 giờ
 `find / -cmin -60`
 
--tìm kiếm file có dung lượng từ 50mb - 100mb
+## tìm kiếm file có dung lượng từ 50mb - 100mb
 `find / -size +50M -size -100M`
 
-#quản lí file
+# Quản lí file
 các lệnh dưới đây để xem file
 
 cat:  sẽ trả lại nội dung tập tin ra console. nếu tập tin quá lớn cần kết hợp
@@ -102,9 +102,9 @@ câu lệnh trên thiết lập 1 file với mốc thời gian là 4 giờ chi�
 lệnh `mkdir` được dùng để khởi tạo thư mục. các đơn giản để xóa thư mục là dùng lệnh `rmkdir`. nhưng
 lệnh `rmkdir` sẽ fail nếu thư mục cần xóa không rỗng
 
-#So sánh file
+# So sánh file
 
 lệnh `diff` dùng để so sánh file và thư mục
 
 <img src="https://i.imgur.com/syOFEHB.png">
-#File tiện ích
+# File tiện ích
