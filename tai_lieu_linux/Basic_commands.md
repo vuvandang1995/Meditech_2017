@@ -1,4 +1,4 @@
-Xác định ví trí
+# Xác định ví trí file
 Phụ thuộc vào từng phần cụ thể, chương trình và các gói phần mềm có thể được cài đặt ở nhiều thư
 mục khác nhau. Nhìn chung, chương trình thực thi thường được lưu ở các thư mục dưới đây.
 ```/bin
@@ -18,7 +18,7 @@ nó có thể tìm tới tất cả các gói trong phạm vi toàn thư mục f
 
 <img src="https://i.imgur.com/sjUasEH.png">
 
-#Truy cập thư mục
+# Truy cập thư mục
 các dòng lệnh dưới đây là rất hữu ích để di chuyển giữa các thư mục
 ```
 cd : vào thư mục home
@@ -26,13 +26,13 @@ cd.. : vào thư mục cha
 cd- : trở lại thư mục trước
 cd/ : chuyển từ thư mục hiện tại vào thư mục root
 ```
-#liệt kê filesystem
+# liệt kê filesystem
 lệnh `tree` là một cách tốt để xem tổng thể cấu trúc của filesystem. Dưới đây là các lệnh
 có thể giúp liệt kê filesystem:
 
 <img src="https://i.imgur.com/WTinDTp.png">
 
-#Liên kết mềm và liên kết cứng
+# Liên kết mềm và liên kết cứng
 lệnh `ln` có thể được sử dụng để tạo liên kết cứng hoặc liên kết mềm hay còn gọi là symlinks
 tạo liên kết cứng từ filename1 đã tồn tại trước đó với cú pháp:
 `ln filename1 filename2`
