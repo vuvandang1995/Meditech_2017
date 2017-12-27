@@ -11,6 +11,9 @@ thứ tự thông thường là: rwx
 Các quyền được chia thành 3 nhóm: người sở hữu `user(u)`, nhóm sở hữu `group(g)` và người dùng khác `others(o)`
 có một số cách khác để sử dụng lệnh `chmod`. ví dụ như cấp quyền thực thi cho nhóm
 
+<img src="https://i.imgur.com/fbmOkvt.png">
+
+
 cấp quyền cho người dùng cách trên có vẻ khó ghi và nhớ, có một cách đơn giản hơn là định danh cho các quyền bằng
 các chữ số:
 4 cho quyền đọc
@@ -23,4 +26,8 @@ hay 5 có nghĩa là đọc và thực thi (4+1)
 
 khi sử dụng cách cấp quyền trên với lệnh `chmod` như sau:
 
+<img src="https://i.imgur.com/VpJ0djc.png">
+
 thay đổi nhóm sở hữu bằng cách sử dụng lệnh `chgrp` như sau:
+
+<img src="https://i.imgur.com/WqX5bpr.png">
