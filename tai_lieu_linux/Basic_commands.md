@@ -11,9 +11,7 @@ mục khác nhau. Nhìn chung, chương trình thực thi thường được lư
 Một cách để định vị chương trình là sử dụng lệnh `which`. Ví dụ, để tìm chính xác chương trình
 tên "diff" nằm ở đâu trong filesystem:
 
-
-
-<img src="https://imgur.com/LRbjrhM">
+<img src="https://i.imgur.com/LRbjrhM.png">
 
 nếu `which` không tìm thấy chương trình đó, thì lệnh `whereis` là một sự thay thế tốt bởi vì
 nó có thể tìm tới tất cả các gói trong phạm vi toàn thư mục filesystem
