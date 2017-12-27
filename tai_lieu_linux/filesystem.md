@@ -2,6 +2,9 @@
 filesystem trong Linux có cấu trúc cây bắt đầu với thư mục `root`, được kí hiệu là  `"/"`
 ### thư mục root
 `/root` : chỉ có `root user` mới có quyền ghi trong thư mục này. chú ý `/root` là thư mục `home` của `root user` chứ không phải là `/.`
+
+
+
 <img src="https://i.imgur.com/MfnI94f.png">
 
 ### thư mục /bin
