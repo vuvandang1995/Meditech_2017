@@ -1,8 +1,7 @@
 # Filesystem
 filesystem trong Linux có cấu trúc cây bắt đầu với thư mục `root`, được kí hiệu là  `"/"`
 ### thư mục root
-`/root` : chỉ có `root user` mới có quyền ghi trong thư mục này
-chú ý `/root` là thư mục `home` của `root user` chứ không phải là `/.`
+`/root` : chỉ có `root user` mới có quyền ghi trong thư mục này. chú ý `/root` là thư mục `home` của `root user` chứ không phải là `/.`
 <img src="https://i.imgur.com/MfnI94f.png">
 
 ### thư mục /bin
@@ -16,10 +15,13 @@ chú ý `/root` là thư mục `home` của `root user` chứ không phải là 
 ### thư mục /etc
 `/etc` : chứa các file config, chứa các shell script dùng để khởi động hoặc tắt các chương trình khác
 <img src="https://i.imgur.com/Qo14KVQ.png">
+
 ### thư mục /dev
 `/dev` : chứa các file thiết bị của hệ thống như usb, disk, ...
+
 ### thư mục /proc
 `/proc` : chứa thông tin các process
+
 ### thư mục /var
 <img src="https://i.imgur.com/fimHXwZ.png">
 `/var` : chứa thông tin các biến, log, mail,...
@@ -30,10 +32,13 @@ print queues: `/var/spool`
 temp files: `/var/tmp`
 ftp home directory: `/var/ftp`
 web server directory: `/var/www`
+
 ### thư mục /tmp
 `/tmp` : chứa các file tạm thời
+
 ### thư mục /usr
 <img src="https://i.imgur.com/vi8NLCI.png">
+
 `/usr` : chứa các thư viện, file thực thi... trong đó:
 `/usr/bin` chứa các file thực thi của người dùng như: at, awk, cc, less... Nếu bạn không tìm thấy chúng trong /bin hãy tìm trong /usr/bin
 `/usr/sbin` chứa các file thực thi của hệ thống dưới quyền của admin như: atd, cron, sshd... Nếu bạn không tìm thấy chúng trong /sbin thì hãy tìm trong thư mục này.
@@ -43,8 +48,10 @@ web server directory: `/var/www`
 `/usr/share` chứa các dữ liệu được chia sẻ và sử dụng bởi các ứng dụng, thường là các ứng dụng cấu trúc không phụ thuộc
 `/usr/src` mã nguồn, thường sử dụng cho Linux kernel
 `/usr/local` dữ liệu và chương trình cụ thể cho các máy nội vùng
+
 ### thư mục /home
 `/home` : thư mục chứa tất cả các file cá nhân của người dùng
+
 ### thư mục boot
 `boot` : chứa các file yêu cầu khi khởi động như initrd, vmlinux, grub...
 Với mọi kernel được cài đặt trên hệ thống sẽ có 4 file quan trọng
@@ -53,12 +60,16 @@ Với mọi kernel được cài đặt trên hệ thống sẽ có 4 file quan 
 `config.is` là file cấu hình nhân, sử dụng để gỡ lỗi
 `system.map` chứa các kí hiệu bảng của kernel, sử dụng để gỡ lỗi
 mỗi file này có một phiên bản kernel được nối vào tên của nó
+
 ### thư mục /lib
 `/lib` : chứa các thư viện hỗ trợ các file thực thi trong `/bin` và `/sbin`
+
 ### thư mục /opt
 `/opt` : chứa các ứng dụng thêm vào từ các nhà cung cấp độc lập khác
+
 ### thư mục /mnt
 `/mnt` : là thư mục tạm để `mount` các file hệ thống
+
 ### thư mục /media
 `/media` : chứa các thiết bị như CdRom `/media/cdrom` hay các phân vùng đĩa cứng `/media/Data`
 
@@ -87,6 +98,8 @@ tự động chạy khi khợi động hệ thống thì sửa file `/etc/fstab`
 1.Lệnh `df` để xem dung lượng đang sử dụng các phân vùng ổ cứng, loại filesystem, disk... với một số tùy chọn
 cơ bản
 <img src="https://i.imgur.com/E7lcRkw.png">
+
 2.Lệnh `fsck` được sử dụng để sữa các lỗi về filesystem linux. ví dụ như khi phát hiện lỗi sai thông tin metadata.
 bên cạnh đó lệnh còn hiển thị loại filesystem của các phân vùng ổ cứng cụ thể
 <img src="https://i.imgur.com/N2sCTYF.png">
+
