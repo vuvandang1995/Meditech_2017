@@ -30,6 +30,9 @@ filesystem trong Linux có cấu trúc cây bắt đầu với thư mục `root`
 
 ### thư mục /var
 <img src="https://i.imgur.com/fimHXwZ.png">
+
+
+
 `/var` : chứa thông tin các biến, log, mail,...
 Ví dụ:
 system log files: `/var/log`
