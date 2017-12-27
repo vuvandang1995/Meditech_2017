@@ -16,7 +16,7 @@ tên "diff" nằm ở đâu trong filesystem:
 nếu `which` không tìm thấy chương trình đó, thì lệnh `whereis` là một sự thay thế tốt bởi vì
 nó có thể tìm tới tất cả các gói trong phạm vi toàn thư mục filesystem
 
-<img src="https://imgur.com/MeAwzBm">
+<img src="https://i.imgur.com/sjUasEH.png">
 
 #Truy cập thư mục
 các dòng lệnh dưới đây là rất hữu ích để di chuyển giữa các thư mục
@@ -30,19 +30,19 @@ cd/ : chuyển từ thư mục hiện tại vào thư mục root
 lệnh `tree` là một cách tốt để xem tổng thể cấu trúc của filesystem. Dưới đây là các lệnh
 có thể giúp liệt kê filesystem:
 
-<img src="https://imgur.com/grCL4cR">
+<img src="https://i.imgur.com/WTinDTp.png">
 
 #Liên kết mềm và liên kết cứng
 lệnh `ln` có thể được sử dụng để tạo liên kết cứng hoặc liên kết mềm hay còn gọi là symlinks
 tạo liên kết cứng từ filename1 đã tồn tại trước đó với cú pháp:
 `ln filename1 filename2`
 
-<img src="https://imgur.com/uIy6W3r">
+<img src="https://i.imgur.com/WqOg670.png">
 
 tạo liên kết mềm thì thêm tùy chọn -s, cú pháp:
 `# ln -s file1.txt file2.txt`
 
-<img src="https://imgur.com/Vz9ajre">
+<img src="https://i.imgur.com/ZkIv2NA.png">
 
 liên kết cứng là tạo 1 file mới độc lập từ 1 file đã tồn tại sẵn.
 liên kết mềm cũng tạo 1 file mới từ 1 file đã tồn tại sẵn.
