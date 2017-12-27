@@ -6,6 +6,9 @@ filesystem trong Linux có cấu trúc cây bắt đầu với thư mục `root`
 
 ### thư mục /bin
 `/bin` : chứa các chương trình thực thi. các chương trình chung được sử dụng bởi tất cả mọi người như lệnh như ls, grep, netstat...
+
+
+
 <img src="https://i.imgur.com/lZr1nRO.png">
 
 ### thư mục /sbin
