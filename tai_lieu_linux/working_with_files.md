@@ -6,16 +6,16 @@ Standard erro (stderr): báo lỗi trong quá trình thực thi
 
 #chuyển hướng các luồng file
 > filename: mở một tập tin, ghi đè nếu đã có dữ liệu
-<img src="https://imgur.com/ONcEE6o">
+<img src="https://i.imgur.com/6Nybg7e.png">
 
 >> filename: dữ liệu được thêm vào, không ghi đè
 
-<img src="https://imgur.com/4vfZlaG">
+<img src="https://i.imgur.com/XzQby2Z.png">
 
 #pipe
  Sử dụng để lấy kết quả của câu lệnh trước làm input cho câu lệnh sau, ngăn cách bởi dấu `|`
  ví dụ:
-<img src="https://imgur.com/yo5Qz35">
+<img src="https://i.imgur.com/IKxAk68.png">
 
 #Tìm kiếm file
 `locate` là một tiện ích giúp tìm kiếm một dữ liệu có trước trong file và thư mục trong filesystem
@@ -33,7 +33,7 @@ kết quả trả về của lệnh `locate` thỉnh thoảng có thể là 1 li
 cần thiết, ta sử dụng lệnh `grep`. Nó sẽ lọc ra những dòng có chứa nội dung theo kí tự được
 chỉ định
 
-<img src="https://imgur.com/1kWxa0l">
+<img src="https://i.imgur.com/tJSw5e3.png">
 
 lệnh `find` là lệnh hữu ích và thường xuyên được sử dụng hàng ngày của sysadmin. 
 nó tìm kiếm tới bất kì thư mục nào và định vị tập tin phù hợp với điều kiện đã chỉ định.
@@ -106,5 +106,5 @@ lệnh `rmkdir` sẽ fail nếu thư mục cần xóa không rỗng
 
 lệnh `diff` dùng để so sánh file và thư mục
 
-<img src="https://imgur.com/cGP0qCo">
+<img src="https://i.imgur.com/syOFEHB.png">
 #File tiện ích
