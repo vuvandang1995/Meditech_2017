@@ -3,17 +3,22 @@ filesystem trong Linux có cấu trúc cây bắt đầu với thư mục `root`
 ### thư mục root
 `/root` : chỉ có `root user` mới có quyền ghi trong thư mục này
 chú ý `/root` là thư mục `home` của `root user` chứ không phải là `/.`
+<img src="https://i.imgur.com/MfnI94f.png">
 ### thư mục /bin
 `/bin` : chứa các chương trình thực thi. các chương trình chung được sử dụng bởi tất cả mọi người như lệnh như ls, grep, netstat, ...
+<img src="https://i.imgur.com/lZr1nRO.png">
 ### thư mục /sbin
 `/sbin` : chứa các chương trình thực thi như lệnh như Iptable, reboot, ifconfig... ==> các lệnh cho sysadmin
+<img src="https://i.imgur.com/3QdA9yq.png">
 ### thư mục /etc
 `/etc` : chứa các file config, chứa các shell script dùng để khởi động hoặc tắt các chương trình khác
+<img src="https://i.imgur.com/Qo14KVQ.png">
 ### thư mục /dev
 `/dev` : chứa các file thiết bị của hệ thống như usb, disk, ...
 ### thư mục /proc
 `/proc` : chứa thông tin các process
 ### thư mục /var
+<img src="https://i.imgur.com/fimHXwZ.png">
 `/var` : chứa thông tin các biến, log, mail,...
 Ví dụ:
 system log files: `/var/log`
@@ -25,6 +30,7 @@ web server directory: `/var/www`
 ### thư mục /tmp
 `/tmp` : chứa các file tạm thời
 ### thư mục /usr
+<img src="https://i.imgur.com/vi8NLCI.png">
 `/usr` : chứa các thư viện, file thực thi... trong đó:
 `/usr/bin` chứa các file thực thi của người dùng như: at, awk, cc, less... Nếu bạn không tìm thấy chúng trong /bin hãy tìm trong /usr/bin
 `/usr/sbin` chứa các file thực thi của hệ thống dưới quyền của admin như: atd, cron, sshd... Nếu bạn không tìm thấy chúng trong /sbin thì hãy tìm trong thư mục này.
@@ -77,6 +83,7 @@ tự động chạy khi khợi động hệ thống thì sửa file `/etc/fstab`
 ## Các lệnh xác định filesystem
 1.Lệnh `df` để xem dung lượng đang sử dụng các phân vùng ổ cứng, loại filesystem, disk... với một số tùy chọn
 cơ bản
+<img src="https://i.imgur.com/E7lcRkw.png">
 2.Lệnh `fsck` được sử dụng để sữa các lỗi về filesystem linux. ví dụ như khi phát hiện lỗi sai thông tin metadata.
 bên cạnh đó lệnh còn hiển thị loại filesystem của các phân vùng ổ cứng cụ thể
-
+<img src="https://i.imgur.com/N2sCTYF.png">
