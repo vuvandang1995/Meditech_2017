@@ -23,8 +23,8 @@ Duy trì bộ nhớ ánh xạ ARP :
 ## III. Cơ chế hoạt động ARP :
 Cách thức hoạt động của ARP trong mạng local
 ARP về cơ bản là một quá trình 2 chiều request/response giữa các thiết bị trong cùng mạng nội bộ. Thiết bị nguồn request bằng cách gửi một bản tin local broadcast trên toàn mạng. Thiết bị đích response bằng một bản tin unicast trả lại cho thiết bị nguồn.
-
 Các loại bản tin ARP
+
 <img src="https://i.imgur.com/3w1cyS2.png">
 
 Có hai dạng bản tin trong ARP : một được gửi từ nguồn đến đích, và một được gửi từ đích tới nguồn.
