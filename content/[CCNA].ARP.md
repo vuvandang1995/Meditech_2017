@@ -2,6 +2,7 @@
 
 ## I. Định nghĩa
 ARP là gì? - ARP(Address Resolution protocol) là giao thức.
+
 ARP để làm gì? - ARP được sử dụng để ánh xạ địa chỉ IP với địa chỉ MAC tương ứng trong mạng LAN
 ## II. Tổng quan
 - ARP cho biết địa chỉ MAC từ địa chỉ IP tương ứng.
