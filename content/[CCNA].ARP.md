@@ -25,12 +25,12 @@ Cách thức hoạt động của ARP trong mạng local
 ARP về cơ bản là một quá trình 2 chiều request/response giữa các thiết bị trong cùng mạng nội bộ. Thiết bị nguồn request bằng cách gửi một bản tin local broadcast trên toàn mạng. Thiết bị đích response bằng một bản tin unicast trả lại cho thiết bị nguồn.
 
 Các loại bản tin ARP
-
+<img src="https://i.imgur.com/3w1cyS2.png">
 
 Có hai dạng bản tin trong ARP : một được gửi từ nguồn đến đích, và một được gửi từ đích tới nguồn.
 Request : Khởi tạo quá trình, gói tin được gửi từ thiết bị nguồn tới thiết bị đích
 Reply : Là quá trình đáp trả gói tin ARP request, được gửi từ máy đích đến máy nguồn
-
+<img src="https://i.imgur.com/vwI74cj.png">
 
 ## Các bước hoạt động trong mạng local
 
@@ -65,21 +65,19 @@ Bài toán: Khi một host A muốn gửi tới host B nhưng B nằm ngoài vù
 ARP proxy dùng cho các dải mạng khác nhau ở 2 phân vùng mạng khác nhau, giao tiếp qua Router
 Vấn đề: Khi 2 máy A và B ở 2 phân vùng mạng khác nhau muốn gửi dữ liệu cho nhau phải qua Router . Router không chuyển tiếp các gói tin broadcast nên 2 máy sẽ không gửi được cho nhau , ARP Proxy để giải quyết vấn đề này.
 
-Imgur
+<img src="https://i.imgur.com/RmnDC0Q.png">
 
 Bài toán: Khi máy A muốn gửi tin tới máy B, nó sẽ gửi bản tin ARP request tới Router. Router gửi về bản tin reply bao gồm địa chỉ MAC của chính nó thay vì địa chỉ MAC của máy B, vì 2 máy ở 2 phân vùng mạng khác nhau nên không thể gửi tin trực tiếp cho nhau.
 Dựa trên địa chỉ MAC Router, Máy A gửi bản tin tới Router, Router sẽ chuyển tiếp sang cho máy B. Trường hợp máy B cũng tương tự.
-Imgur
+<img src="https://i.imgur.com/PXpGy2e.png">
 
-Ưu & nhược điểm của ARP proxy :
-Ưu điểm
-
+### Ưu điểm proxy arp:
 Thuận tiện gửi tin giữa các phân vùng mạng khác nhau
-Nhược điểm
+### Nhược điểm arp proxy
 
 Tăng độ phức tạp của mạng
 Nguy cơ an toàn bảo mật không được bảo đảm khi các router được thiết lập proxy, dẫn đến khả năng có thể giả mạo proxy.
-Mở rộng :
+
 ARP Caching
 Static ARP Cache Entries: Đây là cách mà các thành phần tương ứng trong bảng ARP được đưa vào lần lượt bởi người quản trị. Công việc được tiến hành một cách thủ công
 
