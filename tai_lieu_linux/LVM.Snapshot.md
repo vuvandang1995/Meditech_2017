@@ -1,7 +1,7 @@
 # Giới thiệu LVM Snapshot
 - `LVM snapshots` là một tính năng cho phép tạo ra các bản sao lưu dữ liệu cho Logical Volume, thêm nữa, nó còn cung cấp một tính năng phục hồi dữ liệu cho Logical Volume.
 - Nó hoạt động với LVM và chỉ mất thêm không gian lưu trữ cho những sự thay đổi của Logical volume gốc. Sẽ là tốt nhất khi những sự thay đổi luôn nhỏ hơn không gian cho phép của Snapshot.
-<img src="">
+<img src="https://i.imgur.com/t8Vnews.png">
 
 - Nếu Snapshot hết dung lượng, chúng ta có thể mở rộng bằng lệnh `lvextend`, và ngược lại, để giảm dung lượng snapshot thì dùng lệnh `lvreduce`
 - Nếu bạn lỡ tay xóa bất kì file nào trong Logical volume gốc sau khi đã tạo snapshot cho nó thì cũng không phải lo lắng vì đã có snapshot.
@@ -9,7 +9,7 @@
 # Các bước tạo và sử dụng snapshot trong LVM
 ***B1: Tạo LVM snapshot***
 Đầu tiên, cần kiểm tra dung lượng trống trong vulume group để tạo snapshot. Sử dụng lệnh `vgs`
-<img src="">
+<img src="https://i.imgur.com/uSgCzJX.png">
 
 Như thông tin đã thấy, dung lượng trống là 8GB. Vì thế tạo một snapshot cho logical volume có tên là `tecmint_datas`. Tạo snapshot dung lượng 1GB với lệnh như sau:
 <img src="">
