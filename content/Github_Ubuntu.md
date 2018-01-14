@@ -86,19 +86,21 @@ Giả sử tôi add file `readme1.md` vừa tạo:
 
 hoặc: `git add *` để add hết tất cả dữ liệu trong thư mục clone.
 
-Sau khi add dữ liệu, sử dụng lệnh `commit`:
-Ví dụ: `git commit readme1.md`
-hoặc: `git commit *` để commit tất cả dữ liệu đã add
-ta nên thêm tham số -m để ghi lại một comment cho hành động đó. Ví dụ:
-`git commit readme1.md -m "update file readme1.md"`
+Sau khi add dữ liệu, sử dụng lệnh `commit`. Ví dụ: `git commit readme1.md`
+hoặc: `git commit *` để commit tất cả dữ liệu đã add. Ta nên thêm tham số -m để ghi lại một comment cho hành động đó. Ví dụ: `git commit readme1.md -m "update file readme1.md"`
+
 <img src="https://i.imgur.com/IKKeCV6.png">
+
 
 Lúc này các thay đổi của bạn đã được lưu lại trên máy cục bộ. Để `push` lên server Github ta thực hiện lệnh:
 `git push origin master`
+
 <img src="https://i.imgur.com/kvJEUK2.png">
 
 Lúc này trở lại trang github.com và xem các commit của ta đã được đẩy lên.
+
 <img src="https://i.imgur.com/fas22wY.png">
+
 
 - Pull dữ liệu từ server về local
 Giả sử trên server github của bạn có những thay đổi mà máy local chưa cập nhật những thay đổi đó. Bạn thực hiện lệnh sau:
