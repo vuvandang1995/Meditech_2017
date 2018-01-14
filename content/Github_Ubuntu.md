@@ -69,7 +69,6 @@ Làm việc trên thư mục này:
 ```
 cd linux/
 ```
-
 Bạn có thể thêm dữ liệu của bạn vào thư mục `linux`. Giả sử tôi tạo 1 file `readme1.md` có nội dung: Xin chao moi nguoi
 <img src="https://i.imgur.com/hfKPwsO.png">
 
