@@ -132,3 +132,13 @@ Truy cập vào trang của project đã fork về, chọn `New pull request`
 
 Tiếp theo, chọn `Create pull request`và chờ admin project duyệt.
 
+## Xóa một thư mục trên github
+Để xóa một thư mục trên github web, bạn cần  thực hiện xóa thư mục đó tại thư mục gốc mà đã clone về máy local.
+Các bước để xóa một thư mục trên github web như sau:
+B1: Clone project đó về máy clone
+B2: Thực hiện các lệnh
+`git init`
+`git rm -r --cached folder`
+`git commit -m "remove folder"`
+`git push origin master`
+B3: Kiểm tra trên github web đã được xóa chưa.
