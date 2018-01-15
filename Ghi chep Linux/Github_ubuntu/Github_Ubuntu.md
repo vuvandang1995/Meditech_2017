@@ -137,9 +137,9 @@ Tiếp theo, chọn `Create pull request`và chờ admin project duyệt.
 Các bước để xóa một thư mục trên github web như sau:
 - B1: Clone project đó về máy clone
 - B2: Thực hiện các lệnh
-`git init`
-`git rm -r --cached folder`
-`git commit -m "remove folder"`
-`git push origin master`
+  - `git init`
+  - `git rm -r --cached folder`
+  - `git commit -m "remove folder"`
+  - `git push origin master`
 - B3: Kiểm tra trên github web đã được xóa chưa.
 
