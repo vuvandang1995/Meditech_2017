@@ -35,7 +35,7 @@ Kiểm tra kết quả:
 Add `private key` vào `ssh-agent`:
 `ssh-agent ~/.ssh/id_rsa`
 
-Bạn mở file `id_rsa` và copy đoạn mã đó.
+Bạn mở file `id_rsa.p` và copy đoạn mã đó.
 Tiếp theo, truy cập đường dẫn sau: https://github.com/settings/ssh (đảm bảo bạn đã đăng nhập vào github), chọn Add SSH key, đặt tên cho key này tại Title và paste nội dung vừa copy vào ô Key.
 <img src="https://i.imgur.com/k0fe1VX.png">
 
