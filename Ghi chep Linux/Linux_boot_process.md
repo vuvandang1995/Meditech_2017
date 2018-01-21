@@ -72,7 +72,7 @@ stripped
 - Vâng, hệ thống Linux của bạn đã sẵn sàng cho Windows 2001, bạn nên cẩn thận khi cài đặt nó. ACPI có cả phương thức và dữ liệu, không giống như device-tree, vốn là ngôn ngữ mô tả phần cứng. Các phương thức của ACPI tiếp tục là hoạt động sau khi khởi động. Ví dụ, bắt đầu lệnh `acpi_listen` (từ gói `apcid`) và mở và đóng nắp laptop sẽ thấy rằng chức năng ACPI đang chạy tất cả thời gian. Nếu muốn thay đổi chúng liên quan đến tương tác với trình đơn BIOS lúc khởi động hoặc nạp lại ROM. Nếu bạn đang gặp rắc rối đó, có lẽ bạn nên cài đặt `coreboot`, phần mềm nguồn mở thay thế.
 
 
-#From start_kernel() to userspace
+# From start_kernel() to userspace
 - Code trong `init/main.c` khá dễ hiểu, vẫn mang bản quyền gốc của Linus Torvalds từ năm 1991-1992. Các dòng tìm thấy trong `dmesg | head` vào một hệ thống mới khởi động bắt nguồn chủ yếu từ tập tin nguồn này. CPU đầu tiên được xác nhận với hệ thống, các cấu trúc dữ liệu global được khởi tạo, và trình lập lịch, bộ xử lý gián đoạn (IRQs), bộ đếm thời gian và giao diện điều khiển được đặt theo trình tự.  Cho đến khi chức năng timekeeping_init() chạy, tất cả các dấu thời gian bắt đầu từ 0. Phần khởi tạo kernel này đồng bộ, có nghĩa là sự thực hiện xảy ra trong chính xác một luồng và không có hàm nào được thực hiện cho đến khi kết thúc và trả về kết quả cuối cùng. Kết quả là, đầu ra `dmesg` sẽ được tái tạo hoàn toàn, ngay cả giữa hai hệ thống, miễn là họ có cùng một thiết bị cây hoặc bảng ACPI. Linux đang hoạt động giống như một trong những hệ điều hành RTOS (hệ điều hành thời gian thực) chạy trên các MCU, ví dụ như QNX hoặc VxWorks. Tình huống vẫn tồn tại trong hàm `rest_init()`, được gọi bởi `start_kernel()` tại thời điểm chấm dứt.
 
 <img src="https://i.imgur.com/em0OT2w.png">
@@ -108,5 +108,5 @@ PID  PSR COMMAND
 `initrd` là rất hữu ích cho việc thử nghiệm các hệ thống tập tin và các thiết bị lưu trữ dữ liệu. Giữ các công cụ kiểm tra này trong `initrd` và chạy thử nghiệm của bạn từ bộ nhớ hơn là từ đối tượng được thử.
 - Cuối cùng, khi init chạy, hệ thống đang bắt đầu! Kể từ khi các bộ vi xử lý thứ 2 đang chạy, máy đã không thể dự đoán trước được, hiệu năng. Thật vậy, `ps -o pid`, `psr`, `comm -p 1` có thể chứng minh rằng tiến trình init của không gian người dùng không còn chạy trên bộ xử lý khởi động nữa.
 
-#Summary
+# Summary
 - Quá trình khởi động Linux nghe có vẻ không được động vào, nhìn cách khác, quá trình khởi động khá đơn giản, vì sự phức tạp do các tính năng như preemption, RCU không có trong khi khởi động. Chỉ tập trung vào hạt nhân và PID 1 là nhìn thấy có số lượng lớn công việc mà bootloaders và bộ vi xử lý phụ có thể làm trong việc chuẩn bị nền tảng cho kernel để chạy. Trong khi kernel chắc chắn là duy nhất trong số các chương trình Linux, một số hiểu biết về cấu trúc của nó có thể được hiểu bằng cách áp dụng cho nó một số công cụ tương tự dùng để kiểm tra các chương trình ELF khác. Nghiên cứu quá trình khởi động trong khi nó đang làm việc để bảo vệ hệ thống khi gặp sự cố.
