@@ -6,7 +6,9 @@ Wake-on-LAN
 Trạng thái OFF có nghĩa là hệ thống không có điện, phải không? Rõ ràng điều đó là không phải. Ví dụ, đèn LED của Ethernet sáng vì bật wake-on-LAN (WOL) trên hệ thống của bạn. Hãy kiểm tra bằng cách sau:
 
 `$# sudo ethtool <interface name>`
+
 <img src="https://i.imgur.com/UijbHhJ.png">
+
 Thẻ <interface name> ở đây có thể ví dụ là eth0. Nếu bạn nhìn thấy kết quả của trường "Wake-on" là `g`, điều đó có nghĩa là các máy từ xa có thể khởi động hệ thống bằng cách gửi một MagicPacket. Nếu bạn muốn tắt tính năng này, hãy tắt WOL trong menu hệ thống BIOS hoặc bằng cách sau
 
 `$# sudo ethtool -s <interface name> wol d`
