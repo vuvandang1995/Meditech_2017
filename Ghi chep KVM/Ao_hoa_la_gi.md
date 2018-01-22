@@ -30,8 +30,5 @@
 	- Dedicated virtualization (bare-metal Hypervisor): Hypervisor tương tác trực tiếp với phần cứng máy chủ để quản lý, phân phối và cấp tài nguyên. Loại ảo hóa này bao gồm các giải pháp như VMware ESXi, Microsoft Hyper-V, Xen Server, KVM...
 	- Hosted Architecture: Đây là loại ảo hóa Hypervisor giao tiếp với phần cứng thông qua hệ điều hành. hypervisor lúc này được xem như một ứng dụng của hệ điều hành và các phương thức quản lý, cấp phát tài nguyên đều phải thông qua hệ điều hành. Loại ảo hóa này bao gồm các giải pháp như Vmware WorkStation, Oracle Virtuabox, Microsoft Virtual PC...
 - Vì ở loại thứ 1, Hypervisor tương tác trực tiếp với phần cứng nên việc quản lý và phân phối tài nguyên được tối ưu và hiệu quả hơn so với loại 2, vì vậy triển khai trong thực tế, ảo hóa loại 1 được sử dụng, còn loại 2 sử dụng với mục đích thử nghiệm và học tập
-<<<<<<< HEAD
-=======
 
->>>>>>> efc235aa310848f33addc7a3b3bfec653397d69c
 <img src="https://i.imgur.com/qCAjC2e.png">
