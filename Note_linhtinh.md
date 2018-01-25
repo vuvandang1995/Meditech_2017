@@ -9,3 +9,5 @@ Ví dụ: ssh -X user@....
 
 ## Để biết VM đang dùng bridge nào (switch ảo) thì vào xem file cấu hình của VM đó 
 `/etc/libvirt/qemu/xxx.xml`
+## Có thể tạo switch từ linux bridge mà kết nối đươc với card Wifi
+link hướng dẫn: https://wiki.debian.org/BridgeNetworkConnections
