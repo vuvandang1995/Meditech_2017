@@ -11,3 +11,6 @@ Ví dụ: ssh -X user@....
 `/etc/libvirt/qemu/xxx.xml`
 ## Có thể tạo switch từ linux bridge mà kết nối đươc với card Wifi
 link hướng dẫn: https://wiki.debian.org/BridgeNetworkConnections
+
+## Thắc mắc
+- chưa biết cách xem số port của switch ảo
