@@ -218,7 +218,7 @@ Khởi động lại nginx
 
 ### Bước 5: 
 
-Tuy nhiên sau khi cài web-virt chúng ta sẽ chưa console được các máy ảo đã cài đặt trước sẵn có thông qua novnc. Thế nên ta phải đi chỉnh sửa file VM.xml trên `máy KVM` như sau:
+Tuy nhiên sau khi cài web-virt chúng ta sẽ chưa console được các máy ảo đã cài đặt trước sẵn có thông qua novnc. Thế nên ta phải đi chỉnh sửa file VM.xml trên `máy KVM` như sau: (trong trường hợp KVM server đã VM tr)
 
 ```sh 
 virsh shutdown <name_VM>
