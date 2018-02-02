@@ -150,7 +150,7 @@ Khởi động lại nginx
 
 
 
-
+### Bước 4:
 - Kích hoạt __supervisord__ khi khởi động:
     - Với ubuntu 14.04:
     ```sh
@@ -215,6 +215,23 @@ Khởi động lại nginx
     exit 
     ```
 
+
+### Bước 5: 
+
+Tuy nhiên sau khi cài web-virt chúng ta sẽ chưa console được các máy ảo đã cài đặt trước sẵn có thông qua novnc. Thế nên ta phải đi chỉnh sửa file VM.xml trên `máy KVM` như sau:
+
+```sh 
+virsh shutdown <name_VM>
+virsh edit <name_VM>
+.........................
+<graphics type='vnc' port='-1' autoport='yes' listen='0.0.0.0'>
+      <listen type='address' address='0.0.0.0'/>
+</graphics>
+.........................
+virsh start <name_VM>
+```
+
+### Bước 6: Cấu hình libvirt lắng nghe trên KVM server
 - Cấu hình libvirt:
 
 ```sh
@@ -263,7 +280,7 @@ virsh # exit
 _Chú ý: virsh là một công cụ quản lý máy ảo tương tự như webvirt, virt-manager, etc. nhưng có giao diện dòng lệnh._
 
 
-### Bước 8: Cài đặt web-virt
+### Bước 7: Cài đặt web-virt
 
 - Trên trình duyệt, tiến hành gõ địa chỉ ip của máy chủ cài đặt Webvirt. Giao diện Webvirt hiện ra. Click vào Add Connection để tiến hành tạo một kết nối đến máy KVM :
 
