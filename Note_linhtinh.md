@@ -22,3 +22,8 @@ là để đồng bộ VLAN giữa switch server và switch client.
 Hoặc: sử dụng `nmap -sP 192.168.100.0/24 | grep "52:54:00:CD:76:3A" -B 2` quét toàn bộ mạng sẽ show ra đc IP và MAC của tất cả host trong mạng (tùy chọn `-B 2` là lấy 3 dòng kể từ kết quả lên trên)
 
 <img src="https://i.imgur.com/tTfrdKJ.png">
+
+### Trước khi xóa 1 interface hay bridge với brctl, cần tắt interface, bridge đó trước: 
+- VD: 
+  `ip link set br0 up`
+  `brctl delbr br0`
