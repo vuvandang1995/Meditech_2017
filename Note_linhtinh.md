@@ -30,3 +30,6 @@ Hoặc: sử dụng `nmap -sP 192.168.100.0/24 | grep "52:54:00:CD:76:3A" -B 2` 
 
 ### Để copy tất cả nội dung của một thư mục sang thư mục khác sử dung `cp -a /directory1/* /directory2`
 ví dụ:  cp -a /home/dangvv/kvm-vdi/KVM/hypervisors/* /usr/local/VDI/
+
+### Copy một file từ server hoặc từ local lên server
+link: https://www.garron.me/en/articles/scp.html 
