@@ -42,4 +42,5 @@ link: https://www.garron.me/en/articles/scp.html
 
 
 # KVM-VDI
+- sửa dòng 10 file login.php thành `if ($password==$sql_reply[1]) {`
 - sửa ssh_connect thành ssh2_connect (dòng 39 file inc/infrastructure/KVM/UpdateHypervisors.php)
