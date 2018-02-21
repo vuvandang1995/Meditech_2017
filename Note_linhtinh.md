@@ -33,3 +33,13 @@ ví dụ:  cp -a /home/dangvv/kvm-vdi/KVM/hypervisors/* /usr/local/VDI/
 
 ### Copy một file từ server hoặc từ local lên server
 link: https://www.garron.me/en/articles/scp.html 
+
+
+
+
+
+
+
+
+# KVM-VDI
+- sửa ssh_connect thành ssh2_connect (dòng 39 file inc/infrastructure/KVM/UpdateHypervisors.php)
