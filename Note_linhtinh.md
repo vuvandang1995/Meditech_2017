@@ -43,4 +43,9 @@ link: https://www.garron.me/en/articles/scp.html
 
 # KVM-VDI
 - sửa dòng 10 file login.php thành `if ($password==$sql_reply[1]) {`
-- sửa ssh_connect thành ssh2_connect (dòng 39 file inc/infrastructure/KVM/UpdateHypervisors.php)
+- Chú các sửa các đường dẫn:
+ - `header("Location:  $serviceurl/kvm-vdi/install/");` (file index.php)
+ - `header("Location: $serviceurl/kvm-vdi/reload_vm_info.php");` (file login.php)
+ - `header("Location: $serviceurl/kvm-vdi/dashboard.php");` (file reload_vm_info.php)
+- Sửa file `functions/config.php` các thông số   `$serviceurl`, `$backend_pass`, `$ssh_user`, `mysql_db`, `mysql_user`, `mysql_pass`
+- Chú ý cấp quyền đọc thư mục `var/hyper_keys` chứa private key và public key thì ssh được đển server (chmod 705 id_rsa)
