@@ -51,3 +51,4 @@ link: https://www.garron.me/en/articles/scp.html
 - Chú ý cấp quyền đọc thư mục `var/hyper_keys` chứa private key và public key thì ssh được đển server (chmod 705 id_rsa)
 - Tạo databases, tạo acc đăng nhập
 - Tạo User sử dụng Databases (mysql), cấp quyền cho user đó (lưu ý phải là user đã khai báo trong file config)
+- tạo key, copy public key lên server
