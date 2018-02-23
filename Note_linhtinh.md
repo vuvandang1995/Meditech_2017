@@ -43,7 +43,8 @@ link: https://www.garron.me/en/articles/scp.html
 
 # KVM-VDI
 - sửa dòng 10 file login.php thành `if ($password==$sql_reply[1]) {`
-- Chú các sửa các đường dẫn:
+
+- Chú ý thay thư mục `KVM-VDI` thành `html` hoặc sửa các đường dẫn:
  - `header("Location:  $serviceurl/kvm-vdi/install/");` (file index.php)
  - `header("Location: $serviceurl/kvm-vdi/reload_vm_info.php");` (file login.php)
  - `header("Location: $serviceurl/kvm-vdi/dashboard.php");` (file reload_vm_info.php)
@@ -53,3 +54,4 @@ link: https://www.garron.me/en/articles/scp.html
 - Tạo User sử dụng Databases (mysql), cấp quyền cho user đó (lưu ý phải là user đã khai báo trong file config)
 - tạo key, copy public key lên server
 - Cài popup blocker trên trình duyệt để console vào máy ảo. (https://chrome.google.com/webstore/detail/pop-up-blocker-for-chrome/bkkbcggnhapdmkeljlodobbkopceiche?hl=en)
+- 
