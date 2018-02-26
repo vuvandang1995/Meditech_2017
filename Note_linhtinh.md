@@ -42,7 +42,7 @@ link: https://www.garron.me/en/articles/scp.html
 
 
 # KVM-VDI
-- sửa dòng 10 file login.php thành `if ($password==$sql_reply[1]) {`
+- sửa dòng 10 file login.php thành `if ($password==$sql_reply[1]) {` (vì ngay từ đầu không có tài khoản admin mặc định nên đặt dòng này để insert tài khoản admin1, password: 1 để đăng nhập đã, xong rồi vào add tài khoản admin sau, sau đó trả lại hàm password_verify ban ban đầu của code)
 
 - Chú ý thay thư mục `KVM-VDI` thành `html` hoặc sửa các đường dẫn:
  - `header("Location:  $serviceurl/kvm-vdi/install/");` (file index.php)
