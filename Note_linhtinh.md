@@ -54,4 +54,4 @@ link: https://www.garron.me/en/articles/scp.html
 - Tạo User sử dụng Databases (mysql), cấp quyền cho user đó (lưu ý phải là user đã khai báo trong file config)
 - tạo key, copy public key lên server
 - Cài popup blocker trên trình duyệt để console vào máy ảo. (https://chrome.google.com/webstore/detail/pop-up-blocker-for-chrome/bkkbcggnhapdmkeljlodobbkopceiche?hl=en)
-- 
+- Nết bật Spice HTML5 không chạy thì cần vào thư mục `websockify` chạy lại lệnh `./run --token-plugin TokenFile --token-source /tmp/kvm-vdi 5959 --daemon` để bật port và protocol
