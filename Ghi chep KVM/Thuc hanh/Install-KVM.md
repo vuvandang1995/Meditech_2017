@@ -13,7 +13,7 @@
 ### B2:
 - Cài đặt KVM và các package liên quan
 
-`sudo apt-get install qemu-kvm libvirt-bin`
+`sudo apt-get install qemu-kvm libvirt-bin libvirt bridge-utils virt-manager`
 
 - Trong đó gói `qemu-kvm` là gói chính để ảo hóa, gói `libvirt-bin` cung cấp tool quản lý qemu và kvm như "virsh"
 
