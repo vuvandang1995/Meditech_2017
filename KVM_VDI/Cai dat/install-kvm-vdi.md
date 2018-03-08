@@ -65,6 +65,7 @@ ssh-keygen -t rsa
 - Kiểm tra: hãy thử lệnh
 
 `ssh -i /var/hyper_keys/id_rsa VDI@hypervisor_address`
+- Nếu ssh thành công và không cần nhập mật khẩu, bạn đã làm đúng.
 
 - Tạo database trên **Dashboard server**
 	- Truy cập vào mysql bằng lệnh: `mysql -u root -p password`
