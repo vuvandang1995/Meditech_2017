@@ -16,7 +16,7 @@
 
 `sudo cp -a /home/dangvv/Meditech_2017/html_chuan /var/www/html`
 
-- Vào thư mục `/var/www/html`, Chỉnh sửa file functions/config.php các thông số: $serviceurl, $backend_pass, $ssh_user, $mysql_db, $mysql_user, $mysql_pass. trong đó:
+- Vào thư mục `/var/www/html`, Chỉnh sửa file `functions/config.php` các thông số: $serviceurl, $backend_pass, $ssh_user, $mysql_db, $mysql_user, $mysql_pass. trong đó:
 	- `$serviceurl`: là điạ chỉ của **Dashboard** server
 	- `$backend_pass`: là mật khẩu để xác thực với **Hypervisor** (trên Hypervisor cũng phải cấu hình mật khẩu giống $backend_pass trong file config)
 	- `$ssh_user`: là user name để **Dashboard** ssh vào **Hypervisor**
