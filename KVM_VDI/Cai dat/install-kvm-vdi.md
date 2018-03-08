@@ -59,7 +59,7 @@ ssh-keygen -t rsa
 	- Tạo thư mục `/var/hyper_keys`
 	- Copy file private key và public key từ thư mục `/home/VDI/.ssh` đến thư mục `/var/hyper_keys`
 	- Copy file public key từ thư mục `/var/hyper_keys` tới file `/home/VDI/.ssh/authorized_keys` trên **Hypervisor**
-	- Cấp quyền đọc cac file trong thư mục `/var/hyper_keys`: `sudo chmod 705 id_rsa` `sudo chmod 705 id_rsa.pub`
+	- Cấp quyền đọc các file trong thư mục `/var/hyper_keys`: `sudo chmod 705 id_rsa` `sudo chmod 705 id_rsa.pub`
 - Kiểm tra: hãy thử lệnh
 
 `ssh -i /var/hyper_keys/id_rsa VDI@hypervisor_address`
