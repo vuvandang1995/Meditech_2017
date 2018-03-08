@@ -78,9 +78,6 @@ ssh-keygen -t rsa
 	mysql -u VDI -p vdi < create.sql
 	```
 
-	
-- Nếu ssh thành công không cần mật khẩu, bạn đã làm đúng.
-
 - Trên **Hypervisor server**:
 	- Tạo thư mục `/usr/local/VDI`
 	- Copy tất cả file từ thư mục `/home/dangvv/Meditech_2017/html_chuan/KVM/hypervisors/` vào thư mục: `/usr/local/VDI/`
