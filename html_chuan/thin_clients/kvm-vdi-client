@@ -18,6 +18,7 @@ import time
 import logging
 import logging.config
 
+# Khai bao bien
 config = ConfigParser()
 config.read('/usr/local/VDI-client/config')
 logging.config.fileConfig('/usr/local/VDI-client/config')
@@ -33,15 +34,22 @@ autoexit = config.getboolean('remote_viewer', 'autoexit')
 http_headers = {
     'User-Agent': 'KVM-VDI client',
 }
-w = gtk.Window()
-v = webkit.WebView()
+w = gtk.Window() # tao doi tuong gtk de mo cua so giao dien
+
+v = webkit.WebView() # tao doi tuong webkit de lay noi dung web
+
 v.props.settings.props.enable_default_context_menu = False
-sw = gtk.ScrolledWindow()
+
+sw = gtk.ScrolledWindow() # tao doi tuong gtk de co the cuon cua so w
+
 w.add(sw)
 sw.add(v)
 w.maximize()
-w.connect("destroy", lambda q: gtk.main_quit())
-http_session = requests.session()
+
+w.connect("destroy", lambda q: gtk.main_quit()) # tao dau X de close cua so
+
+http_session = requests.session() # tao bien lay session web
+
 username = ""
 password = ""
 refresh_run = 1
@@ -49,44 +57,71 @@ client_path = ""
 engine = ""
 client_path = "/client.php"
 
-class Login(QtGui.QDialog):
+class Login(QtGui.QDialog):# QtGui la app giao dien, ket hop voi QDialog
     def __init__(self, parent=None):
         super(Login, self).__init__(parent)
+        # tao doi tuong QtGui.QLineEdit la cac form dang nhap
         self.User = QtGui.QLineEdit(self)
         self.Pass = QtGui.QLineEdit(self)
+
+        # gan tieu de cho cac form
         self.LabelUser=QtGui.QLabel(self)
         self.LabelUser.setText("Username:")
         self.LabelPass=QtGui.QLabel(self)
         self.LabelPass.setText("Password:")
+
+        # che giau thong tin password
         self.Pass.setEchoMode(QtGui.QLineEdit.Password)
+
+        # tao button Login
         self.buttonLogin = QtGui.QPushButton('Login', self)
+
+        # click button se goi den ham handleLogin
         self.buttonLogin.clicked.connect(self.handleLogin)
+        
+        # tao doi tuong layout kieu QtGui.QVBoxLayout
         layout = QtGui.QVBoxLayout(self)
+
+        # add cac option
         layout.addWidget(self.LabelUser)
         layout.addWidget(self.User)
         layout.addWidget(self.LabelPass)
         layout.addWidget(self.Pass)
         layout.addWidget(self.buttonLogin)
+
+    # function xu ly login
     def handleLogin(self):
         global username
         global password
         global client_path
         global engine
+
+        # lay text trong form login
         username = str(self.User.text())
         password = str(self.Pass.text())
+  
+        # lay session web va post thong tin login
         reply = http_session.post(dashboard_path+"client_pools.php", data={'username': username, 'password': password}, verify=False, headers=http_headers)
+        #print(reply)
         if reply.text!='LOGIN_FAILURE':
+
+            # connect den function pool_click
             v.connect("notify::title", pool_click)
-            v.load_html_string(str(reply.text),dashboard_path)
+
+            # lay html string tu web
+            v.load_html_string(str(reply.text),dashboard_path) # ham str(...) la ep kieu string
+
             if reply.headers['KVM-VDI-engine'] == 'OpenStack':
                 logger.debug("Using OpenStack engine")
                 engine = reply.headers['KVM-VDI-engine']
                 client_path = "/inc/infrastructure/OpenStack/GetClientConnection.php"
             else:
                 logger.debug("Using KVM engine")
+
             self.accept()
         else:
             QtGui.QMessageBox.warning(self, 'Error', 'Bad user or password')
+
 
 def AutoLogin():
     global username
@@ -210,8 +245,8 @@ def pool_click(v, param):
         else:
             global refresh_run
             refresh_run=0;
-            poolid=vdi_message
-            reply=http_session.post(dashboard_path + client_path, data={'pool': poolid, 'protocol': "SPICE", 'username': username, 'password': password, 'use_hypervisor_address': use_hypervisor_address} ,verify=False, headers=http_headers);
+            vmid=vdi_message
+            reply=http_session.post(dashboard_path + client_path, data={'vmid': vmid, 'protocol': "SPICE", 'username': username, 'password': password, 'use_hypervisor_address': use_hypervisor_address} ,verify=False, headers=http_headers);
             data=json.loads(reply.text)
             logger.debug(data)
             if data['status']=='MAINTENANCE':
@@ -223,7 +258,7 @@ def pool_click(v, param):
             retries=0
             while data['status']=="BOOTUP" and retries < 10 :
                 logger.info("BOOTUP, waiting")
-                reply=http_session.post(dashboard_path + client_path, data={'pool': poolid, 'protocol': "SPICE", 'username': username, 'password': password, 'use_hypervisor_address': use_hypervisor_address} ,verify=False, headers=http_headers);
+                reply=http_session.post(dashboard_path + client_path, data={'vmid': vmid, 'protocol': "SPICE", 'username': username, 'password': password, 'use_hypervisor_address': use_hypervisor_address} ,verify=False, headers=http_headers);
                 data=json.loads(reply.text)
                 time.sleep(1)
             logger.debug("Got reply from dashboard: %s", data)
@@ -240,7 +275,7 @@ if not autologin:
     if login.exec_() == QtGui.QDialog.Accepted:
         r_t=refresh_timer()
         r_t.start()
-        w.set_title("KVM-VDI client")
+        w.set_title("KVM-VDI clienttttttttttt")
         w.show_all()
         gtk.main()
 else:
