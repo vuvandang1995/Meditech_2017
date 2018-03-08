@@ -137,6 +137,15 @@
 
 <img src="https://i.imgur.com/ZBhEVOK.png">
 
+## Đăng nhập với tư cách người dùng (qua ứng dụng)
+- Vào thư mục `/usr/local/VDI-client`
+- Chạy file `kvm-vdi-client`
+
+```
+cd /usr/local/VDI-client
+./kvm-vdi-client
+```
+
 ## Lựa chọn máy ảo để sử dụng.
 - Bạn sẽ nhìn thấy tất cả máy ảo trong pool mà bạn thuộc, số lượng thành viên trong pool, số lượng máy trong pool, số lượng máy đang tắt trong pool, xem tình trạng từng máy trong pool (đang bật hay tắt).
 - Để truy cập vào máy ảo, chỉ cầm bấm vào máy muốn dùng.
