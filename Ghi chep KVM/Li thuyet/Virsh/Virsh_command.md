@@ -14,7 +14,7 @@
 
 `virsh start VM`
 
-- Xóa một VM
+- Tắt một VM
 
 `virsh destroy VM`
 
