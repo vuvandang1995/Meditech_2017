@@ -58,3 +58,6 @@ link: https://www.garron.me/en/articles/scp.html
 
 ## tạo VM bằng virt-install chưa có file .iso (copy file disk vào là dúng đc)
 `sudo virt-install --name=centos --disk path=/var/lib/libvirt/images/xxx.qcow2,format=qcow2,bus=virtio,cache=none --disk path=,device=cdrom,target=hdc --soundhw=ac97 --vcpus=1,cores=1,sockets=1 --ram=1 --network bridge=br0,model=virtio --os-type=linux --os-variant=centos7.0 --graphics spice,listen=0.0.0.0 --redirdev usb,type=spicevmc --video qxl --noreboot --import`
+
+## add card vào mncli
+https://www.thegeekdiary.com/how-to-configure-and-manage-network-connections-using-nmcli/
