@@ -61,3 +61,5 @@ link: https://www.garron.me/en/articles/scp.html
 
 ## add card vào mncli
 https://www.thegeekdiary.com/how-to-configure-and-manage-network-connections-using-nmcli/
+
+## thêm vào file hosts ip và hostname của controller và compute mới cài đc
