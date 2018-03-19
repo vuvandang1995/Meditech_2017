@@ -66,6 +66,8 @@ link: https://www.garron.me/en/articles/scp.html
 https://www.thegeekdiary.com/how-to-configure-and-manage-network-connections-using-nmcli/
 
 ## thêm vào file hosts ip và hostname của controller và compute mới cài đc
+## nếu có lỗi k truy cập đc mysql trong khi cài openstack
+https://www.youtube.com/watch?v=oXjJRrbKjp0
 
 ## nếu có lỗi khi Request authentication token cho demo user
 lỗi: The request you have made requires authentication. (HTTP 401) (Request-ID: req-1a8b7084-bfdd-4a58-9a38-390f2c29fd87)
