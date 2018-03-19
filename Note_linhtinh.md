@@ -66,3 +66,12 @@ link: https://www.garron.me/en/articles/scp.html
 https://www.thegeekdiary.com/how-to-configure-and-manage-network-connections-using-nmcli/
 
 ## thêm vào file hosts ip và hostname của controller và compute mới cài đc
+
+## nếu có lỗi khi Request authentication token cho demo user
+lỗi: The request you have made requires authentication. (HTTP 401) (Request-ID: req-1a8b7084-bfdd-4a58-9a38-390f2c29fd87)
+sửa:
+```
+export OS_TENANT_ID=a3dc17aea0b94f9c885fb7bbd8022a52
+export OS_TENANT_NAME="demo"
+```
+trong đó: id và name của project mà bạn muốn add user đó vào
