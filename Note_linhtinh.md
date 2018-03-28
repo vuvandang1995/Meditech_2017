@@ -85,3 +85,6 @@ trong đó: id và name của project mà bạn muốn add user đó vào
  3. Tạo các VM kết nói được với public network (admin tạo - provider): giao tiếp được với nhau, ra được internet - IP do public network cấp.
  4. Còn nếu muốn cho phép các VM thuộc dải private network có thể ra ngoài internet thì cần tạo router nối giữa private network và public network. **Lưu ý:** *Chỉ có admin hoặc user có quyền admin mới tạo được router này*
 
+
+### Xóa mysql
+https://askubuntu.com/questions/852562/cant-install-mysql-server-client-on-ubuntu-16/852565
