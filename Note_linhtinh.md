@@ -81,7 +81,7 @@ trong đó: id và name của project mà bạn muốn add user đó vào
 **VD:** tạo 1 user `dangvv` thuộc project `ok` với role `member`thì: (nếu gán role `admin` thì có mọi quyền)
  - User `dangvv` có thể :
  1. Chỉ có thể tạo private network trong project đó.
- 2. Tạo các VM kết nối được tới private network đó (chỉ giao tiếp nội bộ với nhau, không ra được internet, các máy bên ngoài không thể kết nối hay ssh tới được các VM này - sử dụng ip private)
+ 2. Tạo các VM kết nối được tới private network đó (chỉ giao tiếp nội bộ với nhau, không ra được internet, các máy bên ngoài không thể kết nối hay ssh tới được các VM này - sử dụng ip private) (**Cái này cần nghiên cứu lại vì hình như không làm được việc này**)
  3. Tạo các VM kết nói được với public network (admin tạo - provider): giao tiếp được với nhau, ra được internet - IP do public network cấp.
  4. Còn nếu muốn cho phép các VM thuộc dải private network có thể ra ngoài internet thì cần tạo router nối giữa private network và public network. **Lưu ý:** *Chỉ có admin hoặc user có quyền admin mới tạo được router này*
 
