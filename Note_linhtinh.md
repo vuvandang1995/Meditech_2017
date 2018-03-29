@@ -88,3 +88,11 @@ trong đó: id và name của project mà bạn muốn add user đó vào
 
 ### Xóa mysql
 https://askubuntu.com/questions/852562/cant-install-mysql-server-client-on-ubuntu-16/852565
+
+### Romote mysql server
+- Thêm bind-address = IP mysql server và file Ubuntu: /etc/mysql/my.cof Centos: /etc/my.cof
+- check port 3306: netstart -anp | grep 3306
+- tạo user trong mysql server: CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password';
+- phân quyền cho user đó: GRANT ALL PRIVILEGES ON * . * TO 'newuser'@'localhost';
+- reload lại quyền mysql: FLUSH PRIVILEGES;
+- remote từ client tới server: mysql -u user -h IP_mysql_server -p
