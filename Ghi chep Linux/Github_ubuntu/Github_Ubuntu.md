@@ -33,7 +33,10 @@ Kiểm tra kết quả:
 <img src="https://i.imgur.com/RQn4WPP.png">
 
 Add `private key` vào `ssh-agent`:
-`ssh-agent ~/.ssh/id_rsa`
+`ssh-add ~/.ssh/id_rsa`
+
+add remote key:
+`git remote set-url origin git@github.com:username/your-repository.git`
 
 Bạn mở file `id_rsa.p` và copy đoạn mã đó.
 Tiếp theo, truy cập đường dẫn sau: https://github.com/settings/ssh (đảm bảo bạn đã đăng nhập vào github), chọn Add SSH key, đặt tên cho key này tại Title và paste nội dung vừa copy vào ô Key.
