@@ -5,4 +5,3 @@
 	1. Tìm hiểu và cố gắng làm chủ Openstack
 	2. Code Python ở level khá
 	3. Làm chủ và phát triển giải pháp KVM-VDI
-- hihi
