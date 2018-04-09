@@ -110,3 +110,5 @@ SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'NO_ZERO_IN_DATE',''));
 SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'NO_ZERO_DATE',''));
 ```
 
+## Có thể tạo sẵn database trong mysql server rồi từ Django inspectdb ngược lại tạo models để  thao tác với Object
+`python manage.py inspectdb > home/models.py`
