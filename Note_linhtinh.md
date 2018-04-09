@@ -102,3 +102,11 @@ https://askubuntu.com/questions/852562/cant-install-mysql-server-client-on-ubunt
 ## Cần cài thư viện của mysqlclient trước mới cài được mysqlclient để connect tới mysql-server bằng Django
 `sudo apt-get install libmysqlclient-dev`
 `sudo pip3 install mysqlclient`
+
+## muốn tạo được trường datetime mặc định trong mysql cần xóa sql_mode như sau:
+```
+show variables like 'sql_mode';
+SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'NO_ZERO_IN_DATE',''));
+SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'NO_ZERO_DATE',''));
+```
+
