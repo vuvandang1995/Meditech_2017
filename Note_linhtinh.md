@@ -34,7 +34,17 @@ ví dụ:  cp -a /home/dangvv/kvm-vdi/KVM/hypervisors/* /usr/local/VDI/
 ### Copy một file từ server hoặc từ local lên server
 link: https://www.garron.me/en/articles/scp.html 
 
-
+## Khi lưu object là khóa chính của 1 model khác, thì cần lưu tên object luôn
+ví dụ:
+ ```
+ agent = Agents.objects.get(id=agentid)
+ ticket = Tickets.objects.get(id=ticketid)
+ tkag = TicketAgent(agentid=agent, ticketid=ticket)
+ tkag.save()
+ ticket.status = 1
+ ticket.save()
+ ```
+ trong đó: Models TicketAgent có 2 khóa ngoại: agentid, ticketid là id của 2 model Agent và Tickets. ok, hiểu chửa?
 
 
 # KVM-VDI
