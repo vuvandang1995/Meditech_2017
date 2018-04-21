@@ -120,3 +120,8 @@ SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'NO_ZERO_DATE',''));
 - Tạo folder: templatetags
 - tạo file common
 Hướng dẫn: https://vinta.ws/code/how-to-set-a-variable-in-django-template.html
+
+
+## Cài để  lấy chuỗi json POST từ client (ví dụ ajax post list lên server ý)
+`sudo pip3 install simplejson`
+
