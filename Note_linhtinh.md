@@ -113,4 +113,10 @@ SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'NO_ZERO_DATE',''));
 ## Có thể tạo sẵn database trong mysql server rồi từ Django inspectdb ngược lại tạo models để  thao tác với Object
 `python manage.py inspectdb > home/models.py`
 
-## Nếu sau khi reload lại nội dung thẻ html nào đó mà jquery các button không hoạt động là do lệnh reload (thừa dấu cách chẳng hạn)
+## Dùng ajax để post form, Nếu sau khi reload lại nội dung thẻ html nào đó mà jquery các button không hoạt động là do lệnh reload (thừa dấu cách chẳng hạn)
+
+
+## cách tạo biến trong template Django là:
+- Tạo folder: templatetags
+- tạo file common
+Hướng dẫn: https://vinta.ws/code/how-to-set-a-variable-in-django-template.html
