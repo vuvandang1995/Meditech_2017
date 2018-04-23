@@ -9,10 +9,6 @@
 
 
 
-
-
-
-
 # This is an auto-generated Django model module.
 # You'll have to do the following manually to clean this up:
 #   * Rearrange models' order
@@ -21,7 +17,7 @@
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
-from django.contrib.auth.hashers import check_password
+# from django.contrib.auth.hashers import check_password
 from user.models import *
 
 class Users(models.Model):
@@ -29,6 +25,8 @@ class Users(models.Model):
     email = models.CharField(max_length=255)
     username = models.CharField(max_length=255)
     password = models.CharField(max_length=255)
+    phone = models.IntegerField(null=True)
+    receive_email = models.IntegerField(default=1)
     status = models.IntegerField(default=0)
     created = models.DateTimeField()
 
@@ -41,6 +39,9 @@ class Users(models.Model):
 class Topics(models.Model):
     name = models.CharField(max_length=255)
     status = models.IntegerField(default=0)
+    type_send = models.IntegerField(default=1)
+    description = models.TextField()
+
 
     class Meta:
         managed = True
@@ -51,19 +52,22 @@ class Agents(models.Model):
     fullname = models.CharField(max_length=255)
     email = models.CharField(max_length=255)
     username = models.CharField(max_length=255)
+    phone = models.IntegerField(null=True)
+    receive_email = models.IntegerField(default=1)
     password = models.CharField(max_length=255)
     admin = models.IntegerField(default=0)
-    leader = models.IntegerField(default=0)
+    status = models.IntegerField(default=1)
 
     class Meta:
         managed = True
         db_table = 'agents'
 
+
 class Tickets(models.Model):
     title = models.CharField(max_length=255)
     content = models.TextField()
-    sender = models.ForeignKey('Users', models.SET(0), db_column='sender')
-    topicid = models.ForeignKey('Topics', models.SET(0), db_column='topicid')
+    sender = models.ForeignKey('Users', models.CASCADE, db_column='sender')
+    topicid = models.ForeignKey('Topics', models.DO_NOTHING, db_column='topicid')
     status = models.IntegerField(default=0)
     datestart = models.DateTimeField()
     dateend = models.DateTimeField()
@@ -84,13 +88,25 @@ class TicketAgent(models.Model):
 
 
 class ForwardTickets(models.Model):
-    senderid = models.ForeignKey(Agents, models.CASCADE, db_column='senderid')
-    receiverid = models.ForeignKey(Agents, models.CASCADE, db_column='receiverid')
-    ticketid = models.ForeignKey('Tickets', models.CASCADE, db_column='ticketid')
+    senderid = models.ForeignKey(Agents, models.CASCADE, db_column='senderid', related_name='sender')
+    receiverid = models.ForeignKey(Agents, models.CASCADE, db_column='receiverid', related_name='receiver')
+    ticketid = models.ForeignKey(Tickets, models.CASCADE, db_column='ticketid')
+    content = models.TextField()
 
     class Meta:
         managed = True
         db_table = 'forward_tickets'
+
+
+class AddAgents(models.Model):
+    senderid = models.ForeignKey(Agents, models.CASCADE, db_column='senderid', related_name='senderadd')
+    receiverid = models.ForeignKey(Agents, models.CASCADE, db_column='receiverid', related_name='receiveradd')
+    ticketid = models.ForeignKey(Tickets, models.CASCADE, db_column='ticketid')
+    content = models.TextField()
+
+    class Meta:
+        managed = True
+        db_table = 'add_agents'
 
 
 
@@ -143,7 +159,8 @@ def authenticate_agent(agentname, agentpass):
         #pwd_valid = check_password(password, u.password)
         pwd_valid = (agentpass == u.password)
         admin_valid = u.admin
-        if login_valid and pwd_valid:
+        status_valid = u.status
+        if login_valid and pwd_valid and status_valid:
             if admin_valid:
                 return 1
             else:
@@ -152,3 +169,4 @@ def authenticate_agent(agentname, agentpass):
             return None
     else:
         return None
+
