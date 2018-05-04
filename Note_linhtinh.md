@@ -139,3 +139,5 @@ ví dụ:
  ```
  trong đó: Models TicketAgent có 2 khóa ngoại: agentid, ticketid là id của 2 model Agent và Tickets. ok, hiểu chửa?
 
+## nếu bị lỗi k call đc redis là do chưa bật redis
+cần bật lên: `docker run -p 6379:6379 -d redis:2.8`
