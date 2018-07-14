@@ -141,3 +141,27 @@ ví dụ:
 
 ## nếu bị lỗi k call đc redis là do chưa bật redis
 cần bật lên: `docker run -p 6379:6379 -d redis:2.8`
+
+## Django API
+- Khi phơi API cho service khác sử dụng (GET, POST, DELETE, PULL), cần cài đặt và cấu hình ở phía back-end phơi API như sau:
+```
+pip install django-cors-headers
+and then add it to your installed apps:
+
+INSTALLED_APPS = (
+    ...
+    'corsheaders',
+    ...
+)
+
+MIDDLEWARE = [  # Or MIDDLEWARE_CLASSES on Django < 1.10
+    ...
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    ...
+]
+
+CORS_ORIGIN_ALLOW_ALL = True
+**True** có nghĩa là đồng ý cho tất cả các host truy cập tới API
+```
+Link tham khảo: https://github.com/ottoyiu/django-cors-headers/#configuration
