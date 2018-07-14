@@ -84,3 +84,6 @@ $("body").on('click', '.handle_done', function(){
         if(confirm("Are you sure ?")){
 ...
 ```
+5. Quá trình deploy bằng docker
+- Gồm 4 container: nginx, database, redis và web
+- Trong đó, nginx nat port 80 của nó ra bên ngoài, database mởi port 3306, redis mở port 6379 cho web chọc vào, web mở port 8000 chạy code để service gunicorn liên kết giữa nginx và web, web mởi port 8001 để chạy `daphne` phục vụ websocket service 
