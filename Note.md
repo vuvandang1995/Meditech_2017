@@ -16,6 +16,6 @@
 3. Database: Mysql
 ## Thành phần đặc biệt
 1. Xử lý real-time
-- Sử dụng công nghệ websocket django channel link["http://channels.readthedocs.io/en/latest/introduction.html"]
+- Sử dụng công nghệ websocket django channel [link](http://channels.readthedocs.io/en/latest/introduction.html)
 
 
