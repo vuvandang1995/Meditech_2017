@@ -87,3 +87,46 @@ $("body").on('click', '.handle_done', function(){
 5. Quá trình deploy bằng docker
 - Gồm 4 container: nginx, database, redis và web
 - Trong đó, nginx nat port 80 của nó ra bên ngoài, database mởi port 3306, redis mở port 6379 cho web chọc vào, web mở port 8000 chạy code để service gunicorn liên kết giữa nginx và web, web mởi port 8001 để chạy `daphne` phục vụ websocket service 
+
+## Một số lưu ý javascrip
+1. Để load lại 1 table, cần load lại đúng id table bảng đó và đặc biệt các bảng không được trùng id.
+cú pháp: $("body #list_agent_leader").load(location.href + " #list_agent_leader");
+2. Dùng tùy chọn 'complete' ở đoạn ajax get datatables để chạy một số function nếu cầu sau khi get data thành công.
+ví dụ:
+```
+$('body .tk_table').each( function(){
+        var topicname = $(this).attr('id').split('__')[1];
+        $(this).DataTable({
+            "columnDefs": [
+                { "width": "5%", "targets": 0 },
+                { "width": "12%", "targets": 1 },
+                { "width": "10%", "targets": 2 },
+                { "width": "10%", "targets": 3 },
+                { "width": "8%", "targets": 4 },
+                { "width": "11%", "targets": 5 },
+                { "width": "8%", "targets": 6 },
+                { "width": "8%", "targets": 7 },
+                { "width": "10%", "targets": 8 },
+            ],
+            "ajax": {
+                "type": "GET",
+                "url": location.href +"data/" + topicname,
+                "contentType": "application/json; charset=utf-8",
+                "data": function(result){
+                    return JSON.stringify(result);
+                },
+                "complete": function(){
+                    setTimeout(function(){
+                        countdowntime();
+                    }, 1000);
+                }
+            },
+            "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+            "order": [[ 0, "desc" ]],
+            "displayLength": 25,
+            'dom': 'Rlfrtip',
+        });
+        
+    });
+```
+3. 
