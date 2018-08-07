@@ -247,6 +247,9 @@ sudo npm install peer
 ```
 sudo npm install peer -g
 ```
+**link nodejs**
+`ln -s /usr/bin/nodejs /usr/bin/node`
+
 **Testing running server**
 ```
 peerjs --port 9000 --key peerjs
