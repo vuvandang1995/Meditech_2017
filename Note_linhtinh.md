@@ -328,3 +328,7 @@ var peer = new Peer({ host: '52.74.92.87', port: 9000, debug: 3 , config: {'iceS
 ```
 
 **For more documentation open this official site in [peerjs.com](http://peerjs.com/)**
+
+
+## Tạo database lưu được tiếng việt
+`CREATE DATABASE mticket CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;`
