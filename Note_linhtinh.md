@@ -165,3 +165,163 @@ CORS_ORIGIN_ALLOW_ALL = True
 **True** có nghĩa là đồng ý cho tất cả các host truy cập tới API
 ```
 Link tham khảo: https://github.com/ottoyiu/django-cors-headers/#configuration
+
+
+###########################################################################################3
+## SIMPLE WEBRTC VIDEO CHAT USING PEERJS
+
+Operating System Ubuntu 14.04 via Koding.com
+
+**Install node.js**
+```
+sudo apt-get update
+sudo apt-get install nodejs
+```
+**Check node.js version**
+```
+nodejs -v
+```
+**Install npm**
+```
+sudo apt-get install npm
+```
+**Check npm**
+```
+npm -v
+```
+**Testing node.js with server.js ( create file server.js )**
+```
+sudo nano server.js
+```
+**Fill with this script**
+```
+var http = require('http');
+
+var server = http.createServer(function(req, res) {
+  res.end('Hello from NodeJS!\n');
+  console.log('Someone visited our web server!');
+})
+
+server.listen(3000, '0.0.0.0');
+console.log("NodeJS web server running on 0.0.0.0:3000");
+```
+**Running server ( move in the same directory with server.js )**
+```
+node server.js
+```
+**Check your browser with IP Address and port 3000 ( in this case I using 52.74.31.72) and then will show like this**
+```
+Hello from NodeJS!
+```
+**Go to your web server directory and create directory named videochat**
+```
+cd /home/hawkphrazer/Web/
+mkdir videochat
+```
+**Download file peerjs server from github using wget**
+```
+wget https://github.com/peers/peerjs-server/archive/master.zip
+```
+**Extract zip**
+```
+unzip master.zip
+```
+**Remove master.zip**
+```
+rm master.zip
+```
+**Go to directory**
+```
+cd peerjs-server-master/
+```
+**Install package.json with npm**
+```
+npm install
+```
+**Install peer library in /usr/local/lib with npm**
+```
+cd /usr/local/lib
+sudo npm install peer
+```
+**Install peer library with npm**
+```
+sudo npm install peer -g
+```
+**Testing running server**
+```
+peerjs --port 9000 --key peerjs
+```
+**If success you will get response**
+```
+Started PeerServer on 0.0.0.0, port: 9000, path: / (v. 0.2.8)
+```
+**Back to videochat directory**
+```
+cd /home/hawkphrazer/Web/videochat/
+```
+**Download peerjs client from github**
+```
+wget https://github.com/peers/peerjs/archive/master.zip
+```
+**Extract**
+```
+unzip master.zip
+```
+**Remove master.zip** 
+```
+rm master.zip
+```
+**Modify this**
+```
+sudo nano peerjs-master/examples/videochat/index.html
+```
+**Change this line**
+```
+<script type="text/javascript" src="/dist/peer.js"></script>
+```
+**To**
+```
+<script type="text/javascript" src="../../dist/peer.js"></script>
+```
+**In this section ( if you don’t want to run your own server you can get the key from PeerJS website )**
+```
+var peer = new Peer({ key: 'lwjd5qra8257b9', debug: 3});
+```
+**To  ( 52.74.92.87 is my IP. Or you can use your domain name )**
+```
+var peer = new Peer({ host: '52.74.92.87', port: 9000, debug: 3});
+```
+**Running peerjs server**
+```
+peerjs --port 9000 --key peerjs
+```
+**Open index.html with browser that support WebRTC ( Mozilla Firefox, Google Chrome, Opera ), open with url address like this http://52.74.92.87/videochat/peerjs-master/examples/videochat/
+Allow webcam and microphone**
+```
+You will get ask for allow webcam and microphone
+```
+**And you will get an ID**
+```
+You will get an unique ID
+``` 
+**Open http://52.74.92.87/videochat/peerjs-master/examples/videochat/ from another device ( I use  smartphone android ) with browser that support WebRTC too ( Mozilla Firefox, Google Chrome, Opera ) allow camera & microphone access**
+```
+Use another device (PC / Notebook / Smartphone) 
+```
+**Call another ID in form text input and click call button**
+```
+Type another ID in form text input and call it
+```
+**If you use different network for each device, you must add Ice Server configuration (  for by-pass firewall NAT ) in this section**
+```
+var peer = new Peer({ host: '52.74.92.87', port: 9000, debug: 3});
+```
+**To  ( You can use public TURN/STUN or create your own by following this tutorial https://code.google.com/p/rfc5766-turn-server/  )**
+```
+var peer = new Peer({ host: '52.74.92.87', port: 9000, debug: 3 , config: {'iceServers': [
+	{ url: 'stun:stun.l.google.com:19302' },
+	{ url: 'turn:xxxx, credential: 'xxxx', username: 'xxxx' }
+});
+```
+
+**For more documentation open this official site in [peerjs.com](http://peerjs.com/)**
