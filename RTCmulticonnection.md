@@ -16,7 +16,7 @@ https://github.com/muaz-khan/RTCMultiConnection/blob/master/demos/Video-Conferen
 **Để truyền được dữ liệu camera, microphone và screen sharing thì phải dùng https**
 - link hướng dẫn setup socket server https đây: https://github.com/muaz-khan/RTCMultiConnection/blob/master/docs/installation-guide.md
 - nếu làm ứng dụng video call sử dụng Peerjs thì cũng phải để PeeJS server cho phép lấy ID bằng https. cái này mai note tiếp.
-*Link setup https*: https://stackoverflow.com/questions/8023126/how-can-i-test-https-connections-with-django-as-easily-as-i-can-non-https-connec
+- *Link setup https*: https://stackoverflow.com/questions/8023126/how-can-i-test-https-connections-with-django-as-easily-as-i-can-non-https-connec
 - Để tạo được websocket trên https thì sửa `ws`thành `wss` ở chỗ tạo object Websocket phía client javascript.
 - Cần cấu hình nginx hay cái gì đó để ứng dụng django-python hay gì đó chạy HTTPS mới video call đc.
 - Mai note tiếp
