@@ -8,3 +8,6 @@
   - <script src="{% static 'peer/RTCMultiConnection.min.js' %}"></script>
   - <script src="http://localhost:9001/socket.io/socket.io.js"></script>
 3. Thay lại dòng `connection.socketURL = "http://localhost:9001/";` ở trong source code cho đúng đường dẫn
+
+Có rất nhiều thứ hay ho ở đây:
+https://github.com/muaz-khan/RTCMultiConnection/blob/master/demos/Video-Conferencing.html
