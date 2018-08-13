@@ -79,11 +79,6 @@ command= /usr/local/bin/peerjs --port 9001
 directory = /home/osticket/RTCMultiConnection-master
 command= node server.js
 
-
-#[program:sockethttp]
-#directory = /home/osticket/RTCMultiConnection-master
-#command= node server.js
-
 startretries=5
 ```
 4. Bật supervisor: `systemctl start supervisord`
