@@ -129,4 +129,16 @@ $('body .tk_table').each( function(){
         
     });
 ```
-3. 
+3. Một ví dụ nếu muốn lại file script nào đó
+
+```
+function loadScript(src, onload) {
+        var script = document.createElement('script');
+        script.src = src;
+        script.async = true;
+        document.documentElement.appendChild(script);
+        console.log('loaded', src);
+    }
+
+    typeof getScreenId === 'undefined' && loadScript('https://cdn.webrtc-experiment.com/getScreenId.js');
+ ```
