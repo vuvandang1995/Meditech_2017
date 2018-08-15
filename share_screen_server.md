@@ -8,9 +8,12 @@ cd node_modules/socketio-over-nodejs/
 node signaler.js
 ```
 
-- b4: chạy server chế độ http:
+- b4: chạy server chế độ https:
 
 ```
 cd node_modules/socketio-over-nodejs/
 node signaler-ssl.js
 ```
+-b5: Mặc định nó chạy trên port **8888**. có thể custem trong file `signaler.js`. test thử
+
+`http://localhost:8888` hoặc `https://localhost:8888`
