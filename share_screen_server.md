@@ -14,6 +14,6 @@ node signaler.js
 cd node_modules/socketio-over-nodejs/
 node signaler-ssl.js
 ```
--b5: Mặc định nó chạy trên port **8888**. có thể custem trong file `signaler.js`. test thử
+- b5: Mặc định nó chạy trên port **8888**. có thể custem trong file `signaler.js`. test thử
 
 `http://localhost:8888` hoặc `https://localhost:8888`
