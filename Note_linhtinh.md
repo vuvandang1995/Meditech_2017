@@ -332,3 +332,6 @@ var peer = new Peer({ host: '52.74.92.87', port: 9000, debug: 3 , config: {'iceS
 
 ## Tạo database lưu được tiếng việt
 `CREATE DATABASE mticket CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;`
+
+## Đừng upgrade pip khi cài ubuntu 18.04 và dùng python 3.6.5. Nếu lỡ upgrade thì dùng lệnh sau để hạ cấp của pip
+`sudo python3 -m pip uninstall pip && sudo apt install python3-pip --reinstall`
