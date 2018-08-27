@@ -32,7 +32,7 @@
 5. Storage volumes
 - Đối tượng storage volume cung cấp cơ chế quản lý những block storage trong pool như: disk partition, logical volume, hoặc 1 file trong local/network file system
 - Sau khi được cấp phát, một volume có thể được sử dụng để cung cấp disk cho 1 hoặc nhiều virtual domain. Nó được thể hiện bởi lớp `virStorageVol` và có 3 định danh như sau:
-  - `**name:** dạng string ngắn, là duy nhất trong tất cả các storage volume trong 1 storage pool. Nó có thể thay đổi khi reboot hoặc chia sẻ giữa các host.
+- **name:** dạng string ngắn, là duy nhất trong tất cả các storage volume trong 1 storage pool. Nó có thể thay đổi khi reboot hoặc chia sẻ giữa các host.
   - **key:** là 1 chuỗi string, dùng để xác định môt volume storage trong storage pool. Nó không bị thay đổi khi reboot hay chia sẻ giữa các host
   - **Path:** là đường dẫn tới volume trong hệ thống. Đường dẫn này là duy nhất trong tất cả các storage volume trong 1 host. 
 6. Host devices
@@ -40,3 +40,22 @@
 - Host devices được thể hiện bởi lớp `virNodeDev` và có 1 định danh là: **name**
 ## Driver model
 
+<img src="">
+
+## Remote management
+1. Basic usege
+2. Data Transports
+3. Authentication schemes
+4. Generating TLS certificates
+5. Public Key Infrastructure setup
+## Connections
+1. Tổng quan
+- Việc đầu tiên mà libvirt agent phải làm là gọi hàm `virlnitializa` hoặc hàm libvirt connection trong Python để tạo 1 đại diện là lớp `virConnect`.
+- Module libvirt Python cung cấp 3 cách kháu nhau để connect tới resource:
+```
+conn = libvirt.open(name)
+conn = libvirt.openAuth(uri, auth, flags)
+conn = libvirt.openReadOnly(name)
+```
+- Trong tất cả các trường hợp thì tham số `name` thực tế là **URL** của hypervisor cần connect tới. Các phần trình bày trước đã cung cấp thông tin đầy đủ về các format được chấp nhận của **URL**. Nếu **URL** bằng None thì nó sẽ tự dò tìm tới hypervisor phù hợp và chúng tôi không khuyến cáo điều này. Ứng dụng nên yêu cầu rõ ràng tới các hypervisor cần kết nối bằng cách cung cấp 1 **URL**
+1.1 
