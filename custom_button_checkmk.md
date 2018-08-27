@@ -1,6 +1,6 @@
-- B1: Tải file ảnh để hiển thi nút button vào thư mục:
+## B1: Tải file ảnh để hiển thi nút button vào thư mục:
 `/opt/omd/versions/1.5.0p2.cre/share/check_mk/web/htdocs/images`
-- B2: Để chỉnh sửa html của tab menu bên tay trái, chỉnh sửa file
+## B2: Để chỉnh sửa html của tab menu bên tay trái, chỉnh sửa file
 `vi /opt/omd/versions/1.5.0p2.cre/share/check_mk/web/htdocs/sidebar.py`
 1. Thêm vào dòng 248 của file:
 ```
@@ -25,7 +25,7 @@ html.close_div()
 ```
 - Trong đó: `id` dòng thứ 1 tự định nghĩa.
 - dòng thứ 3 chính là gọi đến hàm vừa định nghĩa bên phía trên.
-B4: Chỉnh sửa css trong file
+## B3: Chỉnh sửa css trong file
  `vi /opt/omd/versions/1.5.0p2.cre/share/check_mk/web/htdocs/sidebar.css`
 - Tại dòng thứ 55 của file, ghi thêm tên `id` tự định nghĩa ở dòng thứ 2 của hàm dòng thứ 248 trong file `sidebar.py`
   - ví dụ: `#side_header, side_header_mdt {`
@@ -42,9 +42,12 @@ B4: Chỉnh sửa css trong file
  }
  ```
  - Trong đó, `side_header_mdt` chính là `id` tự định nghĩa ở dòng thứ 2 của hàm dòng thứ 248 trong file `sidebar.py`
- B5: Chỉnh sửa css trong file `theme.css`
+ ## B4: Chỉnh sửa css trong file `theme.css`
  `vi /opt/omd/versions/1.5.0p2.cre/share/check_mk/web/htdocs/themes/facelift/theme.css`
  - Tại dòng thứ 884, nếu thêm 1 nút thì thay đổi `top: 64px;` công thêm 50px. nghĩa là:
   - nếu tạo thêm 1 button trên menu, `top: 114px;`
   - nếu tạo thêm 2 button trên menu, `top: 164px;`
   - nếu tạo thêm 3 button trên menu, `top: 214px;`
+## B5
+- reload lại service httpd
+- N
