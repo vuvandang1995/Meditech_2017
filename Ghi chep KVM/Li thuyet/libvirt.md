@@ -57,5 +57,21 @@ conn = libvirt.open(name)
 conn = libvirt.openAuth(uri, auth, flags)
 conn = libvirt.openReadOnly(name)
 ```
-- Trong tất cả các trường hợp thì tham số `name` thực tế là **URL** của hypervisor cần connect tới. Các phần trình bày trước đã cung cấp thông tin đầy đủ về các format được chấp nhận của **URL**. Nếu **URL** bằng None thì nó sẽ tự dò tìm tới hypervisor phù hợp và chúng tôi không khuyến cáo điều này. Ứng dụng nên yêu cầu rõ ràng tới các hypervisor cần kết nối bằng cách cung cấp 1 **URL**
-  - 1.1 
+- Trong tất cả các trường hợp thì tham số `name` thực tế là **URL** của hypervisor cần connect tới. Các phần trình bày trước đã cung cấp thông tin đầy đủ về các format được chấp nhận của **URL**. Nếu **URL** bằng None thì nó sẽ tự dò tìm tới hypervisor phù hợp và chúng tôi không khuyến cáo điều này. Ứng dụng nên yêu cầu rõ ràng tới các hypervisor cần kết nối bằng cách cung cấp 1 **URL**.
+
+### Open
+- Hàm **open** sẽ cố gắng mở một connection có full truy cập đọc-ghi. Nó chỉ kết nối thành công cho các connections, trong đó việc xác thực có thể được thực hiện bằng các thông tin đăng nhập của ứng dụng
+- Ví dụ:
+```
+# Example-1.py
+from __future__ import print_function
+import sys
+import libvirt
+conn = libvirt.open('qemu:///system')
+if conn == None:
+ print('Failed to open connection to qemu:///system', file=sys.stderr)
+ exit(1)
+conn.close()
+exit(0)
+```
+
