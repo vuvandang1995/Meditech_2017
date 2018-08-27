@@ -58,4 +58,4 @@ conn = libvirt.openAuth(uri, auth, flags)
 conn = libvirt.openReadOnly(name)
 ```
 - Trong tất cả các trường hợp thì tham số `name` thực tế là **URL** của hypervisor cần connect tới. Các phần trình bày trước đã cung cấp thông tin đầy đủ về các format được chấp nhận của **URL**. Nếu **URL** bằng None thì nó sẽ tự dò tìm tới hypervisor phù hợp và chúng tôi không khuyến cáo điều này. Ứng dụng nên yêu cầu rõ ràng tới các hypervisor cần kết nối bằng cách cung cấp 1 **URL**
-1.1 
+  - 1.1 
