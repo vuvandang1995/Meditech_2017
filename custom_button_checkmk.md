@@ -28,9 +28,9 @@ html.close_div()
 ## B3: Chỉnh sửa css trong file
  `vi /opt/omd/versions/1.5.0p2.cre/share/check_mk/web/htdocs/sidebar.css`
 - Tại dòng thứ 55 của file, ghi thêm tên `id` tự định nghĩa ở dòng thứ 2 của hàm dòng thứ 248 trong file `sidebar.py`
-  - ví dụ: `#side_header, side_header_mdt {`
+  - ví dụ: `#side_header, #side_header_mdt {`
 - tại dòng thứ 71 của file .css, ghi thêm `id` tự định nghĩa ở dòng thứ 4 của hàm dòng thứ 248 trong file `sidebar.py`
-  - ví dụ: `#side_bg, side_bg_mdt {`
+  - ví dụ: `#side_bg, #side_bg_mdt {`
 - tại dòng thứ 87 của file .css, thêm:
 ```
 #side_header_mdt > a {
