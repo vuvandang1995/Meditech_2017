@@ -50,4 +50,4 @@ html.close_div()
   - nếu tạo thêm 3 button trên menu, `top: 214px;`
 ## B5
 - reload lại service httpd
-- Nếu code vẫn chưa thay đổi thì reboot lại s
+- Nếu code vẫn chưa thay đổi thì reboot lại server 
