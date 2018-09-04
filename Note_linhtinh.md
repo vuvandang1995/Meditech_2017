@@ -338,3 +338,8 @@ var peer = new Peer({ host: '52.74.92.87', port: 9000, debug: 3 , config: {'iceS
 
 ## lỗi khi cài libvirt-python
 phải cài `apt-get install libvirt-dev` trước khi `pip install libvirt-python`
+
+## Để chạy env trong python, hãy:
+1. tạo env `virtualenv env` bằng tài khoản thường (k phải `root`)
+2. cài các môi trường bằng `pip`, k phải bằng `pip3`
+3. chạy
