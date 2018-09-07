@@ -343,3 +343,36 @@ phải cài `apt-get install libvirt-dev` trước khi `pip install libvirt-pyth
 1. tạo env `virtualenv env` bằng tài khoản thường (k phải `root`)
 2. cài các môi trường bằng `pip`, k phải bằng `pip3`
 3. chạy
+
+## để có thể gọi tới các url trong file urls.py từ template .htm, cần đặt namespace tại các url trong file urls.py của project và app_name trong urls.py của các app
+- ví du:
+1. file urls.py của project:
+```
+from django.contrib import admin
+from django.conf import settings
+from django.urls import path, include
+from django.conf.urls.static import static
+
+urlpatterns = [
+    # path('admin/', admin.site.urls),
+    path('', include('teacher.urls', namespace='teacher')),
+    path('student', include('student.urls', namespace='student')),
+    path('adminsc', include('adminsc.urls', namespace='adminsc')),
+]
+```
+2. file urls.py của các app
+```
+from django.urls import path, include
+from . import views
+
+app_name = 'student'
+urlpatterns = [
+    path('', views.home, name='home'),
+    path('/manage_teacher', views.manage_teacher, name='manage_teacher'),
+    path('/manage_teacher/data', views.manage_teacher_data, name='manage_teacher_data'),
+    path('/mon_data', views.mon_data, name='mon_data'),
+    path('/lop_data', views.lop_data, name='lop_data'),
+    path('/profile', views.user_profile, name='profile'),
+    path('/logout', views.user_logout, name='logout'),
+]
+```
