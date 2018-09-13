@@ -376,3 +376,7 @@ urlpatterns = [
     path('/logout', views.user_logout, name='logout'),
 ]
 ```
+
+
+## Mã hóa trường trong model trong Django
+- https://pypi.org/project/django-encrypted-model-fields/
