@@ -379,4 +379,7 @@ urlpatterns = [
 
 
 ## Mã hóa trường trong model trong Django
-- https://github.com/vuvandang1995/django-cryptographic-fields
+1. Cài thư viện: `sudo pip3 install cryptography` hoặc `sudo pip3 install django-cryptography`
+2. import thư viện vào model.py : `from django_cryptography.fields import encrypt`
+3. Cách sử dụng: ví dụ: `password = encrypt(models.CharField(max_length=50))` là mã hóa trường password
+- https://media.readthedocs.org/pdf/django-cryptography/latest/django-cryptography.pdf
