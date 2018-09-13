@@ -385,4 +385,4 @@ urlpatterns = [
 - https://media.readthedocs.org/pdf/django-cryptography/latest/django-cryptography.pdf
 
 ## Lấy value phần tử đầu tiên của dict trong python3
-`next(iter(item.networks.values()))`
+`next(iter(.values()))`
