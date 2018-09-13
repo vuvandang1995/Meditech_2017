@@ -379,4 +379,4 @@ urlpatterns = [
 
 
 ## Mã hóa trường trong model trong Django
-- https://pypi.org/project/django-encrypted-model-fields/
+- https://github.com/vuvandang1995/django-cryptographic-fields
