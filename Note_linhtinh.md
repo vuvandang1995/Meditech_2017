@@ -383,3 +383,6 @@ urlpatterns = [
 2. import thư viện vào model.py : `from django_cryptography.fields import encrypt`
 3. Cách sử dụng: ví dụ: `password = encrypt(models.CharField(max_length=50))` là mã hóa trường password
 - https://media.readthedocs.org/pdf/django-cryptography/latest/django-cryptography.pdf
+
+## Lấy value phần tử đầu tiên của dict trong python3
+`next(iter(item.networks.values()))`
