@@ -33,4 +33,4 @@
 - Web-RTC
 - OpenStack API
 - Hệ thống Cobbler để chạy kịch bản tự động cài hệ điều hành khi tạo máy ảo bằng image boot từ file .iso (mong muốn)
-- Hệ thống giám sát zabbix để monitor được nhiều thông số hơn, t. (mong muốn)
+- Hệ thống giám sát zabbix để monitor được nhiều thông số hơn, tốt hơn. (mong muốn)
