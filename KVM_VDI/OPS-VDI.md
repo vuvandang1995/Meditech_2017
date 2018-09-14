@@ -22,7 +22,7 @@
   - **User**: Là người sử dụng các máy ảo được cấp
     - Quản lý thông tin các máy ảo được Admin cấp: Name, image, ip, status, network, ...
     - Các thao tác máy ảo cơ bản như: Thêm, sửa, xóa, console, stop, pause, start, snapshot, ...
-    - Monitor thông các máy ảo được cấp.
+    - Monitor thông scác máy ảo được cấp.
     - Trao đổi với Admin qua tab chat.
     - Gửi ticket thông báo tới hệ thống và email cho Admin khi cần hỗ trợ.
     - Share màn hình cho Admin nếu cần thiết.
