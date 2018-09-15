@@ -386,3 +386,13 @@ urlpatterns = [
 
 ## Lấy value phần tử đầu tiên của dict trong python3
 `next(iter(.values()))`
+
+## để xác thực kết nối tới OPS qua V3 Client API sử dụng session, cần có 3 thành phần sau
+```
+auth = v3.Password(auth_url='http://192.168.40.63:5000/v3',
+                    username='admin',
+                    password='ducnm37',
+                    project_id='a82f65c340c946d48625f7dde358b637',
+                    user_domain_id='default')
+sess = session.Session(auth=auth)
+```
