@@ -142,3 +142,83 @@ function loadScript(src, onload) {
 
     typeof getScreenId === 'undefined' && loadScript('https://cdn.webrtc-experiment.com/getScreenId.js');
  ```
+ 
+ 4. Thêm 1 cách show data phía client.
+- Server đẩy dữ liệu html về qua HttpResponse. Ví dụ:
+```
+def group_data(request, lop):
+    user = request.user
+    if user.is_authenticated and user.position == 1:
+        # data = []
+        ls_nhom = Nhom.objects.filter(myuser_id=user, lop_id=Lop.objects.get(ten=lop))
+        html = ''
+        for lsg in ls_nhom:
+            html += '''
+                <div class="col-md-4 col-sm-4 col-xs-12 profile_details" >
+                            <div class="well profile_view">
+                                <div class="col-sm-12">
+                                <h4 class="brief"><i>'''+lsg.ten_nhom+'''</i></h4>
+                                <div class="left col-xs-7">
+                                    <h2>Thành viên</h2>
+                                    <ul class="list-unstyled">
+            '''
+            for std in ChiTietNhom.objects.filter(nhom_id=lsg):
+                html += '''<li id="drag1" draggable="true"><i class="fa fa-user"></i>'''+std.myuser_id.fullname+'''</li>'''
+            html += '''</ul>
+                              </div>
+                              <div class="right col-xs-5 text-center">
+                                <img src="/static/images/img.jpg" alt="" class="img-circle img-responsive">
+                              </div>
+                            </div>
+                            <div class="col-xs-12 bottom text-center">
+                              <div class="col-xs-12 col-sm-6 emphasis">
+                              </div>
+                              <div class="col-xs-12 col-sm-6 emphasis">
+                                <button type="button" class="btn btn-danger btn-xs delete_gr" name="'''+str(lsg.id)+'''">Xóa</button>
+                                <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#chinhsua" name="dang">
+                                  Chỉnh sửa
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>'''
+            # data.append(html)
+
+        # json_data = json.loads(json.dumps({"data": data}))
+        return HttpResponse(html)
+```
+- `urls.py`: `path('group_data/<str:lop>', views.group_data, name='group_data'),`
+- phía template client tạo 1 thẻ div rỗng để nhận dữ liệu. ví dụ:
+```
+<div id="list_group">
+</div>
+```
+- Phía client load Jquery như sau:
+```
+function reload(){
+        $('body #list_group').html('');
+        $.ajax({
+            type:'GET',
+            url: "/group_data/"+class_,
+            success: function(data){
+                $('body #list_group').html(data);
+                $('body .delete_gr').on('click',function(){
+                    var token = $("input[name=csrfmiddlewaretoken]").val();
+                    var groupid = $(this).attr('name');
+                    var r = confirm('Bạn chắc chắn xóa?');
+                    if (r == true){
+                        $.ajax({
+                            type:'POST',
+                            url:location.href,
+                            data: {'delete_group':groupid, 'csrfmiddlewaretoken':token},
+                            success: function(){
+                                reload();
+                            }
+                       });
+                    }
+                });
+            }
+        });
+    }
+    reload();
+```
