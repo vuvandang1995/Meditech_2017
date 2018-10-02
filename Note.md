@@ -89,9 +89,9 @@ $("body").on('click', '.handle_done', function(){
 - Trong đó, nginx nat port 80 của nó ra bên ngoài, database mởi port 3306, redis mở port 6379 cho web chọc vào, web mở port 8000 chạy code để service gunicorn liên kết giữa nginx và web, web mởi port 8001 để chạy `daphne` phục vụ websocket service 
 
 ## Một số lưu ý javascrip
-1. Để load lại 1 table, cần load lại đúng id table bảng đó và đặc biệt các bảng không được trùng id.
+### 1. Để load lại 1 table, cần load lại đúng id table bảng đó và đặc biệt các bảng không được trùng id.
 cú pháp: $("body #list_agent_leader").load(location.href + " #list_agent_leader");
-2. Dùng tùy chọn 'complete' ở đoạn ajax get datatables để chạy một số function nếu cầu sau khi get data thành công.
+### 2. Dùng tùy chọn 'complete' ở đoạn ajax get datatables để chạy một số function nếu cầu sau khi get data thành công.
 ví dụ:
 ```
 $('body .tk_table').each( function(){
@@ -129,7 +129,7 @@ $('body .tk_table').each( function(){
         
     });
 ```
-3. Một ví dụ nếu muốn lại file script nào đó
+### 3. Một ví dụ nếu muốn lại file script nào đó
 
 ```
 function loadScript(src, onload) {
@@ -143,7 +143,7 @@ function loadScript(src, onload) {
     typeof getScreenId === 'undefined' && loadScript('https://cdn.webrtc-experiment.com/getScreenId.js');
  ```
  
- 4. Thêm 1 cách show data phía client.
+ ### 4. Thêm 1 cách show data phía client.
 - Server đẩy dữ liệu html về qua HttpResponse. Ví dụ:
 ```
 def group_data(request, lop):
@@ -222,7 +222,7 @@ function reload(){
     }
     reload();
 ```
-5. Tạo sự kiện chỉ của thẻ cha, không ảnh hưởng tới thẻ con. Ví dụ như sau:
+### 5. Tạo sự kiện chỉ của thẻ cha, không ảnh hưởng tới thẻ con. Ví dụ như sau:
 - html:
 ```
 <div class='foobar'> .foobar (alert) 
@@ -238,7 +238,7 @@ $('.foobar').on('click', function(e) {
   alert( 'clicked the foobar' );
 });
 ```
-6. Tạo sự kiện chỉ thẻ con, không ảnh hưởng tới thẻ cha. Vi dụ:
+### 6. Tạo sự kiện chỉ thẻ con, không ảnh hưởng tới thẻ cha. Vi dụ:
 - html:
 ```
 <div class="header">
