@@ -222,3 +222,41 @@ function reload(){
     }
     reload();
 ```
+5. Tạo sự kiện chỉ của thẻ cha, không ảnh hưởng tới thẻ con. Ví dụ như sau:
+- html:
+```
+<div class='foobar'> .foobar (alert) 
+  <span>child (no alert)</span>
+</div>
+```
+- Jquery:
+```
+$('.foobar').on('click', function(e) {
+  if (e.target !== this)
+    return;
+  
+  alert( 'clicked the foobar' );
+});
+```
+6. Tạo sự kiện chỉ thẻ con, không ảnh hưởng tới thẻ cha. Vi dụ:
+- html:
+```
+<div class="header">
+    <a href="link.html">some link</a>
+    <ul class="children">
+        <li>some list</li>
+    </ul>
+</div>
+```
+- Jquery:
+```
+$(document).ready(function(){
+    $(".header").click(function(){
+        $(this).children(".children").toggle();
+    });
+   $(".header a").click(function(e) {
+        e.stopPropagation();
+   });
+});
+```
+- Link tham khhttp://api.jquery.com/event.stopPropagation/
