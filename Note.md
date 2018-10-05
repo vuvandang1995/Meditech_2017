@@ -260,3 +260,130 @@ $(document).ready(function(){
 });
 ```
 - Link tham khhttp://api.jquery.com/event.stopPropagation/
+### 7. Cơ chế check user online trên Django.
+- Sử dụng cache để lưu lại request từ user tới server. cache sẽ lưu các thông tin của request: key (thường là username của user), thời điểm server nhận request, thời gian user không hoạt đông trước khi kết luận user đó offline.
+- Cài đặt:
+
+`pip3 install python-memcached`
+`sudo apt install memcached`
+
+- Tạo file `middleware.py` tại một app trong project
+```
+import datetime
+from django.core.cache import cache
+from django.conf import settings
+
+class ActiveUserMiddleware(object):
+    def __init__(self, get_response):
+        self.get_response = get_response
+        # One-time configuration and initialization.
+
+    def __call__(self, request):
+        # Code to be executed for each request before
+        # the view (and later middleware) are called.
+
+        response = self.get_response(request)
+
+        # Code to be executed for each request/response after
+        # the view is called.
+        try:
+            current_user = request.user
+            if request.user.is_authenticated:
+                now = datetime.datetime.now()
+                cache.set('seen_%s' % (current_user.username), now, settings.USER_LASTSEEN_TIMEOUT)
+        except:
+            pass
+        return response
+```
+- thêm vào file `setting.py`
+```
+MIDDLEWARE = [
+    'SmartClass.middleware.ActiveUserMiddleware',
+    ...
+]
+```
+
+```
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',              
+    }
+}
+# Number of seconds of inactivity before a user is marked offline
+USER_ONLINE_TIMEOUT = 20
+
+# Number of seconds that we will keep track of inactive users for before 
+# their last seen is removed from the cache
+USER_LASTSEEN_TIMEOUT = 60 * 60 * 24 * 7
+```
+
+- Thêm các hàm vào class định nghĩa user. Ví dụ:
+```
+class MyUser(AbstractBaseUser):
+    email = models.EmailField(
+        verbose_name='email address',
+        max_length=255,
+        unique=True,
+    )
+    fullname = models.CharField(max_length=100)
+    username = models.CharField(max_length=100, unique=True)
+    is_active = models.BooleanField(default=True)
+    position = models.IntegerField(default=0)
+    # 0 : student
+    # 1 : teacher
+    # 2 : admin
+    truong_id = models.ForeignKey('Truong', models.CASCADE, db_column='truong_id', null=True)
+    gioi_tinh = models.IntegerField(null=True)
+
+    objects = MyUserManager()
+
+    USERNAME_FIELD = 'username'
+
+    class Meta:
+        managed = True
+        db_table = 'my_user'
+
+    def __str__(self):
+        return self.email
+
+    def has_perm(self, perm, obj=None):
+        "Does the user have a specific permission?"
+        # Simplest possible answer: Yes, always
+        return True
+
+    def has_module_perms(self, app_label):
+        "Does the user have permissions to view the app `app_label`?"
+        # Simplest possible answer: Yes, always
+        return True
+
+    @property
+    def is_staff(self):
+        "Is the user a member of staff?"
+        # Simplest possible answer: All admins are staff
+        return self.is_admin
+
+    def last_seen(self):
+        return cache.get('seen_%s' % self.username)
+
+    def online(self):
+        if self.last_seen():
+            now = datetime.datetime.now()
+            if now > self.last_seen() + datetime.timedelta(
+                        seconds=settings.USER_ONLINE_TIMEOUT):
+                return False
+            else:
+                return True
+        else:
+            return False
+```
+- **Lưu ý: phải import cái này vào**
+```
+from django.core.cache import cache 
+import datetime
+from SmartClass import settings
+```
+- Show ở phía template:
+```
+{{}}
+```
