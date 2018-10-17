@@ -21,6 +21,8 @@ https://github.com/muaz-khan/RTCMultiConnection/blob/master/demos/Video-Conferen
 - Cần cấu hình nginx hay cái gì đó để ứng dụng django-python hay gì đó chạy HTTPS mới video call đc.
 - Mai note tiếp
 
+- Thttps://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-nginx-in-ubuntu-16-04:
+
 # Các bước setup 1 video call app lên server
 B1: chuẩn bị: 1 webserver, 1 socket server+peerJS server
 b2: Tải source code về webserver. 
