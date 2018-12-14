@@ -1,7 +1,7 @@
 ## Thời gian thực hiện: 6 tháng (12/2018 - 6/2019)
 ## Lộ trình
 ### 1. Learn a programming language
-  - Python
+  - Python: http://python101.pythonlibrary.org/
 ### 2. Understand different OS concepts
   - Process management
   - Theards and concurrency
