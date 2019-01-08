@@ -145,4 +145,8 @@ Các bước để xóa một thư mục trên github web như sau:
   - `git commit -m "remove folder"`
   - `git push origin master`
 - B3: Kiểm tra trên github web đã được xóa chưa.
+## Xóa 1 folder trống trên github
+- `git rm -r -f name-folder`
+- `git commit -m "remove folder"`
+- `git push origin master`
 
